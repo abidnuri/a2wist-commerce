@@ -40,7 +40,7 @@ export default function Slider() {
         className={"slider__item " + className}
       >
         <div className="slider__item__info">
-          <div>
+          <div className="slider__item__info__inner">
             <p>New Inspiration 2021</p>
             <h1>{data.name}</h1>
             <h3>Check Out The Latest Deals on Cell Phones</h3>
