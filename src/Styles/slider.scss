@@ -3,25 +3,24 @@ $background-color: #f1f1f1;
 @keyframes fade {
   0% {
     opacity: 0;
-    margin-left: 100%;
   }
   40% {
     opacity: 1;
-    margin-left: 0;
   }
   60% {
     opacity: 1;
-    margin-left: 0;
   }
   100% {
     opacity: 0;
-    margin-right: 100%;
   }
 }
 
 .slider {
   background-color: $background-color;
+  max-width: 100%;
+  overflow: hidden;
   &__item {
+    min-height: 400px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     opacity: 1;
@@ -50,9 +49,29 @@ $background-color: #f1f1f1;
 
 .slider__running {
   animation-play-state: running;
-  animation: fade 2s ease-in-out 0s infinite;
+  animation: fade 2.4s ease-in-out 0s infinite;
 }
 
 .slider__paused {
   animation-play-state: paused;
+}
+
+@media (max-width: 960px) {
+  .slider__item {
+    display: block;
+    position: relative;
+    height: 100vh;
+    &__image {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+    }
+    &__info {
+      color: #fff;
+      height: 100vh;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      inset: 0;
+    }
+  }
 }
