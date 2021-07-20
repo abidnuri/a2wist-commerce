@@ -1,0 +1,58 @@
+$background-color: #f1f1f1;
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    margin-left: 100%;
+  }
+  40% {
+    opacity: 1;
+    margin-left: 0;
+  }
+  60% {
+    opacity: 1;
+    margin-left: 0;
+  }
+  100% {
+    opacity: 0;
+    margin-right: 100%;
+  }
+}
+
+.slider {
+  background-color: $background-color;
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    opacity: 1;
+    &__info {
+      display: grid;
+      place-items: center;
+    }
+  }
+  &__btns {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 10px;
+  }
+  &__button {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #333;
+    &.active {
+      background-color: green;
+    }
+  }
+}
+
+.slider__running {
+  animation-play-state: running;
+  animation: fade 2s ease-in-out 0s infinite;
+}
+
+.slider__paused {
+  animation-play-state: paused;
+}
