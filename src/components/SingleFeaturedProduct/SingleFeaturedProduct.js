@@ -7,7 +7,7 @@ const SingleFeaturedProduct = ({feature}) => {
             <div class="max-w-md mx-auto overflow-hidden md:max-w-2xl">
                 <div class={`${feature.flex} grid justify-items-center`}>
                     <div class="md:flex-shrink-0">
-                        <img class="object-cover md:h-full w-48" src="https://i.ibb.co/NLpXp4W/woman-dress.png" alt="Man looking at item at a store" />
+                        <img class="object-cover md:h-full w-48" src={feature.featureImage} alt="Man looking at item at a store" />
                     </div>
                     <div class="p-8 md:text-left text-center">
                         <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">OUTERWEAR</div>
@@ -19,9 +19,7 @@ const SingleFeaturedProduct = ({feature}) => {
                     </div>
                 </div>
             </div>
-        </div>
-        
-        
+        </div>        
         </>
     );
 };
