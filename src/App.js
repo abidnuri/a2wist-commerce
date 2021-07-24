@@ -1,32 +1,22 @@
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import Home from './components/Home/Home';
-import NotFound from './components/NotFound/NotFound';
-import Navbars from './components/Header/Navbar';
+import "./App.css";
+import Footer from "./components/Footer/Footer";
+import HotProducts from "./components/HotProducts/HotProducts";
+import Navbar from "./components/Navbar/Navbar";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
+import SingleProuct from "./components/SingleProduct/SingleProuct";
+import Slider from "./components/Slider/Slider";
 
 function App() {
-  return (
-    <div className="App">
-      <Router>
-        <Navbars/>
-      <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-          <Route path="*">
-            <NotFound/>
-          </Route>
-        </Switch>
-    </Router>  
-      </div>
-  );
+  return <div>
+    <Navbar></Navbar>
+    <Slider />
+    <SingleProuct></SingleProuct>
+    <HotProducts/>
+    <ProductDetail></ProductDetail>
+    <Footer></Footer>
+
+  </div>
+
 }
 
 export default App;
