@@ -1,4 +1,5 @@
 import "./App.css";
+import FeaturedProduct from "./components/FeaturedProduct/FeaturedProduct";
 import Footer from "./components/Footer/Footer";
 import HotProducts from "./components/HotProducts/HotProducts";
 import Navbar from "./components/Navbar/Navbar";
@@ -10,6 +11,7 @@ function App() {
   return <div>
     <Navbar></Navbar>
     <Slider />
+    <FeaturedProduct />
     <SingleProuct></SingleProuct>
     <HotProducts/>
     <ProductDetail></ProductDetail>
