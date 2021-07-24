@@ -17,13 +17,13 @@ const featureData = [{
     title: "OUTER OFFER",
     rows: 1,
     flex: "md:flex",
-    featureImage: "https://i.ibb.co/NLpXp4W/woman-dress.png",
+    featureImage: "https://i.ibb.co/FYwPbNY/womanBag.png",
 },
 {
     title: "INNER OFFER",
     rows: 1,
     flex: "md:flex",
-    featureImage: "https://i.ibb.co/NLpXp4W/woman-dress.png",
+    featureImage: "https://i.ibb.co/6n53YSx/woman.png",
 },
 {
     title: "EXCLUSIVE OFFER",
