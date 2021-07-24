@@ -1,13 +1,12 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
-import Home from './Components/Home/Home';
-import NotFound from './Components/NotFound/NotFound';
-import Navbars from './Components/Header/Navbar';
+import Home from './components/Home/Home';
+import NotFound from './components/NotFound/NotFound';
+import Navbars from './components/Header/Navbar';
 
 function App() {
   return (
