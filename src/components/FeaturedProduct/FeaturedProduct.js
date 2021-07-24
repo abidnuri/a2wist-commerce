@@ -4,6 +4,7 @@ const FeaturedProduct = () => {
     return (
         <div>
             <section className="mt-8 featured-main">
+                <h2 className="py-8 text-xl text-center text-red-500">FEATURED PRODUCT</h2>
                 <div className="container grid grid-rows-2 gap-4 px-4 mx-auto grid-col-1 md:grid-cols-3" >
                     <div className="col-span-1 row-span-1 bg-gray-300 shadow-md rounded-xl">
                         <div class="max-w-md mx-auto overflow-hidden md:max-w-2xl">
