@@ -1,0 +1,103 @@
+$background-color: #f1f1f1;
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.slider {
+  background-color: $background-color;
+  overflow: hidden;
+  &__item {
+    height: 500px;
+    position: relative;
+    &__info {
+      background-color: rgba(0, 0, 0, 0.3);
+      position: absolute;
+      color: #fff;
+      padding: 10%;
+      inset: 0;
+      h1 {
+        font-size: 2em;
+      }
+      h3 {
+        font-size: 1.3em;
+      }
+      button {
+        padding: 0.5em 1em;
+        background-color: #333;
+        color: #fff;
+        margin: 1em 0;
+        text-transform: uppercase;
+        &:hover {
+          background-color: #4b4b4b;
+        }
+      }
+    }
+    &__btns {
+      position: absolute;
+      inset: 85% 20% 3% 20%;
+      width: auto;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      padding: 10px;
+    }
+    &__image {
+      height: 100%;
+      img {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  &__button {
+    display: inline-block;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 3px solid #333;
+    &.active {
+      background-color: #333;
+    }
+  }
+}
+
+.slider__running {
+  animation-play-state: running;
+  animation: fade 4s ease-in-out 0s infinite;
+}
+
+.slider__paused {
+  animation-play-state: paused;
+}
+
+@media (max-width: 960px) {
+  .slider {
+    height: 400px;
+    &__item__btns {
+      inset: 80% 20% 5% 20%;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .slider {
+    height: 370px;
+    &__item__btns {
+      inset: 60% 20% 5% 20%;
+    }
+  }
+}
