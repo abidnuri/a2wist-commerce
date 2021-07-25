@@ -1,6 +1,5 @@
 import React from "react";
 import SingleFeaturedProduct from "../SingleFeaturedProduct/SingleFeaturedProduct";
-import { useState } from "react";
 const featureData = [
   {
     title: "NEW ARRIVAL",
@@ -42,8 +41,8 @@ const FeaturedProduct = () => {
           FEATURED PRODUCT
         </h2>
         <div className="container grid grid-rows-2 gap-4 px-4 mx-auto grid-col-1 md:grid-cols-3">
-          {featureData.map((feature) => (
-            <SingleFeaturedProduct feature={feature} />
+          {featureData.map((feature , index) => (
+            <SingleFeaturedProduct feature={feature} key={index} />
           ))}
         </div>
       </section>

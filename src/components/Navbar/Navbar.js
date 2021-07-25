@@ -8,7 +8,7 @@ const Navbar = () => {
           <div>
             <a
               className="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
-              href="#"
+              href="abid"
             >
               eSwap
             </a>
@@ -34,50 +34,50 @@ const Navbar = () => {
           <div className="flex flex-col md:flex-row md:mx-6">
             <a
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="#"
+              href="abid"
             >
               HOME
             </a>
             <a
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="#"
+              href="abid"
             >
               ORDERS
             </a>
             <a
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="#"
+              href="abid"
             >
               PRODUCTS
             </a>
             <a
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="#"
+              href="abid"
             >
               DISCOUNT
             </a>
             <a
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="#"
+              href="abid"
             >
               REVIEW
             </a>
             <a
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="#"
+              href="abid"
             >
               CONTACT
             </a>
           </div>
 
-          <div className="flex md:mx-4 md:my-0 justify-center md:block">
+          <div className="flex justify-center md:mx-4 md:my-0 md:block">
             <a
               className="relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-              href="#"
+              href="abid"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="w-6 h-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -93,14 +93,14 @@ const Navbar = () => {
               <span className="absolute top-0 left-0 p-1 text-xs text-white bg-indigo-500 rounded-full" />
             </a>
           </div>
-          <div className="flex md:mx-4 md:my-0 justify-center md:block">
+          <div className="flex justify-center md:mx-4 md:my-0 md:block">
             <a
               className="relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-              href="#"
+              href="abid"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="w-5 h-5"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -114,10 +114,10 @@ const Navbar = () => {
               <span className="absolute top-0 left-0 p-1 text-xs text-white bg-indigo-500 rounded-full" />
             </a>
           </div>
-          <div className="flex md:mx-4 md:my-0 justify-center md:block">
+          <div className="flex justify-center md:mx-4 md:my-0 md:block">
             <a
               className="relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-              href="#"
+              href="abid"
             >
               <svg
                 className="w-5 h-5"
@@ -137,14 +137,14 @@ const Navbar = () => {
               <span className="absolute top-0 left-0 p-1 text-xs text-white bg-indigo-500 rounded-full" />
             </a>
           </div>
-          <div className="flex md:mx-4 md:my-0 justify-center md:block">
+          <div className="flex justify-center md:mx-4 md:my-0 md:block">
             <a
               className="relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-              href="#"
+              href="abid"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="w-6 h-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

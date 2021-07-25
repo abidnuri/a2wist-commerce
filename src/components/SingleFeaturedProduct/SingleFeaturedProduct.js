@@ -4,16 +4,16 @@ const SingleFeaturedProduct = ({feature}) => {
     return (
         <>
         <div className={`col-span-1 row-span-${feature.rows} bg-gray-300 shadow-md rounded-xl`}>
-            <div class="max-w-md mx-auto overflow-hidden md:max-w-2xl">
-                <div class={`${feature.flex} grid justify-items-center`}>
-                    <div class="md:flex-shrink-0">
-                        <img class="object-cover md:h-full w-48" src={feature.featureImage} alt="Man looking at item at a store" />
+            <div className="max-w-md mx-auto overflow-hidden md:max-w-2xl">
+                <div className={`${feature.flex} grid justify-items-center`}>
+                    <div className="md:flex-shrink-0">
+                        <img className="object-cover w-48 md:h-full" src={feature.featureImage} alt="Man looking at item at a store" />
                     </div>
-                    <div class="p-8 md:text-left text-center">
-                        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{feature.title}</div>
+                    <div className="p-8 text-center md:text-left">
+                        <div className="text-sm font-semibold tracking-wide text-indigo-500 uppercase">{feature.title}</div>
                         <h2 className="mt-3 text-lg text-md">NEW</h2>
                         <p className="text-sm">COLLECTION</p>
-                        <button class="bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 mt-5 rounded">
+                        <button className="px-4 py-2 mt-5 font-bold text-white bg-black rounded hover:bg-blue-700">
                             SHOP NOW
                         </button>
                     </div>
