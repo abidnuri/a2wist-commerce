@@ -4,10 +4,10 @@ $background-color: #f1f1f1;
   0% {
     opacity: 0;
   }
-  40% {
+  30% {
     opacity: 1;
   }
-  60% {
+  70% {
     opacity: 1;
   }
   100% {
@@ -17,39 +17,67 @@ $background-color: #f1f1f1;
 
 .slider {
   background-color: $background-color;
-  max-width: 100%;
   overflow: hidden;
   &__item {
-    min-height: 400px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    opacity: 1;
+    height: 500px;
+    position: relative;
     &__info {
-      display: grid;
-      place-items: center;
+      background-color: rgba(0, 0, 0, 0.3);
+      position: absolute;
+      color: #fff;
+      padding: 10%;
+      inset: 0;
+      h1 {
+        font-size: 2em;
+      }
+      h3 {
+        font-size: 1.3em;
+      }
+      button {
+        padding: 0.5em 1em;
+        background-color: #333;
+        color: #fff;
+        margin: 1em 0;
+        text-transform: uppercase;
+        &:hover {
+          background-color: #4b4b4b;
+        }
+      }
     }
-  }
-  &__btns {
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-    padding: 10px;
+    &__btns {
+      position: absolute;
+      inset: 85% 20% 3% 20%;
+      width: auto;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      padding: 10px;
+    }
+    &__image {
+      height: 100%;
+      img {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+      }
+    }
   }
   &__button {
     display: inline-block;
+    cursor: pointer;
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: #333;
+    border: 3px solid #333;
     &.active {
-      background-color: green;
+      background-color: #333;
     }
   }
 }
 
 .slider__running {
   animation-play-state: running;
-  animation: fade 2.4s ease-in-out 0s infinite;
+  animation: fade 4s ease-in-out 0s infinite;
 }
 
 .slider__paused {
@@ -58,26 +86,18 @@ $background-color: #f1f1f1;
 
 @media (max-width: 960px) {
   .slider {
-    height: 100vh;
-  }
-  .slider__item {
-    display: block;
-    position: relative;
-    height: 95vh;
-    &__image {
-      position: absolute;
-      z-index: -1;
-      inset: 0;
-      img {
-        height: 100%;
-      }
+    height: 400px;
+    &__item__btns {
+      inset: 80% 20% 5% 20%;
     }
-    &__info {
-      color: #fff;
-      height: 100vh;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.4);
-      inset: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .slider {
+    height: 370px;
+    &__item__btns {
+      inset: 60% 20% 5% 20%;
     }
   }
 }
