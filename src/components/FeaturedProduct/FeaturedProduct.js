@@ -40,7 +40,7 @@ const FeaturedProduct = () => {
         <h2 className="py-8 text-xl text-center text-red-500">
           FEATURED PRODUCT
         </h2>
-        <div className="container grid grid-rows-2 gap-4 px-4 mx-auto grid-col-1 md:grid-cols-3">
+        <div className="container grid grid-cols-1 grid-rows-2 gap-4 px-4 mx-auto md:grid-cols-3 xl:grid-cols-3">
           {featureData.map((feature , index) => (
             <SingleFeaturedProduct feature={feature} key={index} />
           ))}
