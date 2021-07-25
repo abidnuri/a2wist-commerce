@@ -1,0 +1,70 @@
+.discount {
+  height: 95vh;
+  background-image: url("../../img/t-shirt.jpg");
+  background-position: top;
+  background-size: cover;
+  position: relative;
+}
+.discount_details {
+  width: 55%;
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+}
+.discount_details h2 {
+  font-size: 3em;
+  color: #0a0d14;
+  margin-top: 20px;
+}
+.timer {
+  display: flex;
+}
+.timer .hours,
+.minutes,
+.seconds {
+  border: 2px solid #545454;
+  width: 120px;
+  height: 100px;
+  margin-left: 30px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 17px;
+}
+.timer .days {
+  border: 2px solid #545454;
+  width: 120px;
+  height: 100px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 17px;
+}
+.timer span {
+  display: block;
+  font-size: 40px;
+  margin-bottom: 0;
+  color: #545454;
+  font-weight: 900;
+}
+.discount button {
+  margin-top: 10px;
+  padding: 20px 40px;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  font-weight: 700;
+}
+.discount button:hover {
+  background-color: white;
+  color: black;
+}
+@media only screen and (max-width: 600px) {
+  .discount {
+    width: 100vw;
+  }
+  .discount_details {
+    width: 90vw;
+    margin-right: 20px;
+  }
+}
