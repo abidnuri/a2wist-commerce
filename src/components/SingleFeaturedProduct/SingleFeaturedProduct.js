@@ -10,7 +10,7 @@ const SingleFeaturedProduct = ({feature}) => {
                         <img class="object-cover md:h-full w-48" src={feature.featureImage} alt="Man looking at item at a store" />
                     </div>
                     <div class="p-8 md:text-left text-center">
-                        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">OUTERWEAR</div>
+                        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{feature.title}</div>
                         <h2 className="mt-3 text-lg text-md">NEW</h2>
                         <p className="text-sm">COLLECTION</p>
                         <button class="bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 mt-5 rounded">

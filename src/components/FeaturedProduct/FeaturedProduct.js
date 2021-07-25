@@ -6,7 +6,7 @@ const featureData = [
     title: "NEW ARRIVAL",
     rows: 1,
     flex: "md:flex",
-    featureImage: "https://i.ibb.co/NLpXp4W/woman-dress.png",
+    featureImage: "https://i.ibb.co/qgc1y16/child-shirt.png",
   },
   {
     title: "EXCLUSIVE OFFER",
@@ -15,10 +15,10 @@ const featureData = [
     featureImage: "https://i.ibb.co/NLpXp4W/woman-dress.png",
   },
   {
-    title: "OUTER OFFER",
+    title: "NEW COLLECTION",
     rows: 1,
     flex: "md:flex",
-    featureImage: "https://i.ibb.co/FYwPbNY/womanBag.png",
+    featureImage: "https://i.ibb.co/qCp9Bbj/womanBag.png",
   },
   {
     title: "INNER OFFER",
@@ -27,10 +27,10 @@ const featureData = [
     featureImage: "https://i.ibb.co/6n53YSx/woman.png",
   },
   {
-    title: "EXCLUSIVE OFFER",
+    title: "OUTER OFFER",
     rows: 1,
     flex: "md:flex",
-    featureImage: "https://i.ibb.co/NLpXp4W/woman-dress.png",
+    featureImage: "https://i.ibb.co/yXpnvQ3/woman-stand.png",
   },
 ];
 
