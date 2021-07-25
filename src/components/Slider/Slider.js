@@ -7,11 +7,36 @@ import slider4 from "../../img/slider4.jpg";
 import slider5 from "../../img/slider5.png";
 
 const fakeData = [
-  { name: "Female Cloth", price: 435, img: slider1 },
-  { name: "Smart Phone", price: 4545, img: slider2 },
-  { name: "Shoe", price: 425, img: slider3 },
-  { name: "Shoe", price: 425, img: slider4 },
-  { name: "Shoe", price: 425, img: slider5 },
+  {
+    name: "The Denim",
+    description: "The Latest Trend",
+    price: 435,
+    img: slider1,
+  },
+  {
+    name: "Sweat Shirt",
+    description: "New Innovation",
+    price: 4545,
+    img: slider2,
+  },
+  {
+    name: "Denim & Jeans",
+    description: "Stylish Shirt",
+    price: 4545,
+    img: slider3,
+  },
+  {
+    name: "Short Shirt",
+    description: "The Ultimate Design",
+    price: 4545,
+    img: slider4,
+  },
+  {
+    name: "Long Shirt",
+    description: "Most Popular",
+    price: 4545,
+    img: slider5,
+  },
 ];
 
 export default function Slider() {
@@ -47,11 +72,9 @@ export default function Slider() {
     <div className="slider">
       <div className={"slider__item " + className}>
         <div className="slider__item__info">
-          <h3>New Inspiration 2021</h3>
-          <h1>
-            {data.name} {activeItem}
-          </h1>
-          <h3>Check Out The Latest Deals on Cell Phones</h3>
+          <h3>{data.description}</h3>
+          <h1>{data.name}</h1>
+          <h3>Check Out The Latest Deals On Clothes</h3>
           <button>Shop Now</button>
         </div>
         <div
