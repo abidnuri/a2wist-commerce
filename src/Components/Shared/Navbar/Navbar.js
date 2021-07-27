@@ -8,7 +8,7 @@ const Navbar = () => {
           <div>
             <a
               className="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
-              href="abid"
+              href="none"
             >
               eSwap
             </a>
@@ -34,37 +34,37 @@ const Navbar = () => {
           <div className="flex flex-col md:flex-row md:mx-6">
             <a
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="abid"
+              href="none"
             >
               HOME
             </a>
             <a
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="abid"
+              href="none"
             >
               ORDERS
             </a>
             <a
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="abid"
+              href="none"
             >
               PRODUCTS
             </a>
             <a
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="abid"
+              href="none"
             >
               DISCOUNT
             </a>
             <a
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="abid"
+              href="none"
             >
               REVIEW
             </a>
             <a
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="abid"
+              href="none"
             >
               CONTACT
             </a>
@@ -73,7 +73,7 @@ const Navbar = () => {
           <div className="flex justify-center md:mx-4 md:my-0 md:block">
             <a
               className="relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-              href="abid"
+              href="none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@ const Navbar = () => {
           <div className="flex justify-center md:mx-4 md:my-0 md:block">
             <a
               className="relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-              href="abid"
+              href="none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +117,7 @@ const Navbar = () => {
           <div className="flex justify-center md:mx-4 md:my-0 md:block">
             <a
               className="relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-              href="abid"
+              href="none"
             >
               <svg
                 className="w-5 h-5"
@@ -140,7 +140,7 @@ const Navbar = () => {
           <div className="flex justify-center md:mx-4 md:my-0 md:block">
             <a
               className="relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-              href="abid"
+              href='/account'
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

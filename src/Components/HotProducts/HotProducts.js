@@ -1,5 +1,5 @@
 import React from 'react';
-import fackeData from '../../fackeData/fackData.json'
+import fackData from '../../fackData/fackData.json'
 import HotSingleProduct from '../HotSingleProduct/HotSingleProduct';
 const HotProducts = () => {
     
@@ -16,7 +16,7 @@ const HotProducts = () => {
                 </div>
                 <div className="grid grid-cols-1 gap-5 p-10 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
                     {
-                        fackeData.map(product => <HotSingleProduct product={product} key={product.id}></HotSingleProduct>)
+                        fackData.map(product => <HotSingleProduct product={product} key={product.id}></HotSingleProduct>)
                     }
                 </div>
         </div>

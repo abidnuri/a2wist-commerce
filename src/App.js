@@ -1,27 +1,35 @@
 import "./App.css";
-import Discount from "./components/Discount/Discount";
-import FeaturedProduct from "./components/FeaturedProduct/FeaturedProduct";
-import Footer from "./components/Footer/Footer";
-import HotProducts from "./components/HotProducts/HotProducts";
-import Navbar from "./components/Navbar/Navbar";
-import ProductDetail from "./components/ProductDetail/ProductDetail";
-import Signup from "./components/Login/Signup";
-import SingleProuct from "./components/SingleProduct/SingleProuct";
-import Slider from "./components/Slider/Slider";
+import NotFound from './components/NotFound/NotFound';
+import Home from './components/Home/Home';
+import Contact from './components/Contact/Contact';
+import Signup from './components/Login/Signup';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Navbar></Navbar>
-      <Signup />
-      <Slider />
-      <FeaturedProduct />
-      <SingleProuct></SingleProuct>
-      <HotProducts />
-      <Discount />
-      <ProductDetail></ProductDetail>
-      <Footer></Footer>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/signup">
+          <Signup />
+        </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

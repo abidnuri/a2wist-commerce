@@ -1,24 +1,22 @@
 import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import fackData from '../../fackeData/fackData.json'
-import Product from '../Product/Product';
-
+import FeaturedProduct from '../FeaturedProduct/FeaturedProduct';
+import Slider from '../Slider/Slider';
+import HotProducts from './../HotProducts/HotProducts';
+import Discount from '../Discount/Discount';
+import Footer from '../Shared/Footer/Footer';
+import Navbar from '../Shared/Navbar/Navbar';
+import SingleProduct from '../SingleProduct/SingleProduct';
 
 const Home = () => {
-
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        const products =  fackData
-        setProducts(products)
-    }, [])
     return (
-        <div className="container">
-        <div className="row">
-            {
-                products.map(product => <Product key={product.id} product={product}></Product>)
-            }
-        </div>
+        <div>
+            <Navbar />
+            <Slider />
+            <FeaturedProduct />
+            <SingleProduct/>
+            <HotProducts />
+            <Discount />
+            <Footer />
         </div>
     );
 };
