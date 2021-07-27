@@ -141,7 +141,7 @@ const Navbar = () => {
           <div className="flex justify-center md:mx-4 md:my-0 md:block">
             <Link
               className="relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-              href='/account'
+              to='/signup'
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

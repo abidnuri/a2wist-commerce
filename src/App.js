@@ -8,10 +8,13 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import Navbar from "./components/Shared/Navbar/Navbar";
+import Footer from './components/Shared/Footer/Footer';
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Switch>
         <Route exact path="/">
           <Home />
@@ -29,6 +32,7 @@ function App() {
           <NotFound />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }
