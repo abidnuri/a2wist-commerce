@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SingleProuct = () => {
+const SingleProduct = () => {
     return (
         <section className="text-gray-600 body-font">
             <div className="container flex flex-col items-center px-5 py-24 mx-auto md:flex-row">
@@ -24,4 +24,4 @@ const SingleProuct = () => {
     );
 };
 
-export default SingleProuct;
+export default SingleProduct;

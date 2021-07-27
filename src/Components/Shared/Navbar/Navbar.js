@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -6,12 +7,12 @@ const Navbar = () => {
       <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
         <div className="flex items-center justify-between">
           <div>
-            <a
+            <Link
               className="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
-              href="abid"
+              to="none"
             >
               eSwap
-            </a>
+            </Link>
           </div>
           {/* Mobile menu button */}
           <div className="flex md:hidden">
@@ -32,48 +33,48 @@ const Navbar = () => {
         {/* Mobile Menu open: "block", Menu closed: "hidden" */}
         <div className="items-center md:flex">
           <div className="flex flex-col md:flex-row md:mx-6">
-            <a
+            <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="abid"
+              to="none"
             >
               HOME
-            </a>
-            <a
+            </Link>
+            <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="abid"
+              to="none"
             >
               ORDERS
-            </a>
-            <a
+            </Link>
+            <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="abid"
+              to="none"
             >
               PRODUCTS
-            </a>
-            <a
+            </Link>
+            <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="abid"
+              to="none"
             >
               DISCOUNT
-            </a>
-            <a
+            </Link>
+            <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="abid"
+              to="none"
             >
               REVIEW
-            </a>
-            <a
+            </Link>
+            <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              href="abid"
+              to="none"
             >
               CONTACT
-            </a>
+            </Link>
           </div>
 
           <div className="flex justify-center md:mx-4 md:my-0 md:block">
-            <a
+            <Link
               className="relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-              href="abid"
+              to="none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -91,12 +92,12 @@ const Navbar = () => {
               </svg>
 
               <span className="absolute top-0 left-0 p-1 text-xs text-white bg-indigo-500 rounded-full" />
-            </a>
+            </Link>
           </div>
           <div className="flex justify-center md:mx-4 md:my-0 md:block">
-            <a
+            <Link
               className="relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-              href="abid"
+              to="none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -112,12 +113,12 @@ const Navbar = () => {
               </svg>
 
               <span className="absolute top-0 left-0 p-1 text-xs text-white bg-indigo-500 rounded-full" />
-            </a>
+            </Link>
           </div>
           <div className="flex justify-center md:mx-4 md:my-0 md:block">
-            <a
+            <Link
               className="relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-              href="abid"
+              to="none"
             >
               <svg
                 className="w-5 h-5"
@@ -135,12 +136,12 @@ const Navbar = () => {
               </svg>
 
               <span className="absolute top-0 left-0 p-1 text-xs text-white bg-indigo-500 rounded-full" />
-            </a>
+            </Link>
           </div>
           <div className="flex justify-center md:mx-4 md:my-0 md:block">
-            <a
+            <Link
               className="relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-              href="abid"
+              to='/signup'
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -156,9 +157,8 @@ const Navbar = () => {
                   d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                 />
               </svg>
-
               <span className="absolute top-0 left-0 p-1 text-xs text-white bg-indigo-500 rounded-full" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

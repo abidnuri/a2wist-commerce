@@ -1,27 +1,35 @@
-import { Provider } from "react-redux";
 import "./App.css";
-import Dashboard from "./components/Dashboard/Dashboard";
-import FeaturedProduct from "./components/FeaturedProduct/FeaturedProduct";
-import Footer from "./components/Footer/Footer";
-import HotProducts from "./components/HotProducts/HotProducts";
-import Navbar from "./components/Navbar/Navbar";
-import ProductDetail from "./components/ProductDetail/ProductDetail";
-import SingleProuct from "./components/SingleProduct/SingleProuct";
-import Slider from "./components/Slider/Slider";
-import store from "./Reedux/store";
+import NotFound from "./components/NotFound/NotFound";
+import Home from "./components/Home/Home";
+import Contact from "./components/Contact/Contact";
+import Signup from "./components/Login/Signup";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navbar from "./components/Shared/Navbar/Navbar";
+import Footer from "./components/Shared/Footer/Footer";
 
 function App() {
   return (
-    <Provider store={store}>
-      <Navbar></Navbar>
-      <Slider />
-      <Dashboard />
-      <FeaturedProduct />
-      <SingleProuct></SingleProuct>
-      <HotProducts />
-      <ProductDetail></ProductDetail>
-      <Footer></Footer>
-    </Provider>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/signup">
+          <Signup />
+        </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
+      <Footer />
+    </Router>
   );
 }
 
