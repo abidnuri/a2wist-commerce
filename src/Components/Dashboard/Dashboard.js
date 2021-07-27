@@ -1,12 +1,11 @@
-import React from "react";
-import { UserProvider } from "../../Context/UserContext";
+import { useSelector } from "react-redux";
 
 export default function Dashboard() {
+  const user = useSelector((state) => state.user);
   return (
     <div>
-      <UserProvider>
-        <h2>Welcome back.</h2>
-      </UserProvider>
+      <h2>Welcome Back {user.name}</h2>
+      <button>Set User</button>
     </div>
   );
 }
