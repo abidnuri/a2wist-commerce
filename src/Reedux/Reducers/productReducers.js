@@ -3,16 +3,17 @@ import {
   LOAD_PRODUCT,
   REMOVE_FROM_CART,
 } from "../Actions/productActions";
+import fackData from "../../fackData/fackData.json";
 
 const initialState = {
-  products: [],
+  all: fackData,
   cart: [],
 };
 
 const productReducers = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_PRODUCT:
-      return { ...state, products: action.products };
+      return { ...state, all: action.products };
     case ADD_TO_CART:
       const newCart = [...state.cart, action.product];
       return { ...state, cart: newCart };
