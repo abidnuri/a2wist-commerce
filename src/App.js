@@ -1,5 +1,5 @@
 import "./App.css";
-import Discount from "./components/Discount/Discount";
+import Dashboard from "./components/Dashboard/Dashboard";
 import FeaturedProduct from "./components/FeaturedProduct/FeaturedProduct";
 import Footer from "./components/Footer/Footer";
 import HotProducts from "./components/HotProducts/HotProducts";
@@ -16,8 +16,8 @@ function App() {
       <FeaturedProduct />
       <SingleProuct></SingleProuct>
       <HotProducts />
-      <Discount />
       <ProductDetail></ProductDetail>
+      <Dashboard />
       <Footer></Footer>
     </div>
   );
