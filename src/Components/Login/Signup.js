@@ -17,9 +17,9 @@ const Signup = () => {
     const [option, setOption] = useState('register');
     const [loggedInUser, setLoggedInUser,] = useContext(UserContext)
 
-    let history = useHistory();
-let location = useLocation();
-let { from } = location.state || { from: { pathname: "/" } };
+    const history = useHistory();
+    const location = useLocation();
+    const { from } = location.state || { from: { pathname: "/" } };
 
 //Handle Input Change value and valid email and password
 const handleChange = (event) => {
