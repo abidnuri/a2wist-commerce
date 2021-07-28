@@ -9,6 +9,7 @@ import Footer from "./components/Shared/Footer/Footer";
 import { createContext, useState } from "react";
 import Review from "./components/Review/Review";
 import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
 
 export const UserContext = createContext();
 
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <Signup />
+          </Route>
+          <Route path="/product/:productId">
+            <ProductDetail/>
           </Route>
           <PrivateRoute path="/contract">
             <Contact />

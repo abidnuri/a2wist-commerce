@@ -35,43 +35,43 @@ const Navbar = () => {
           <div className="flex flex-col md:flex-row md:mx-6">
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="home"
+              to="/"
             >
               HOME
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="orders"
+              to="/orders"
             >
               ORDERS
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="products"
+              to="/products"
             >
               PRODUCTS
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="discount"
+              to="/discount"
             >
               DISCOUNT
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="review"
+              to="/review"
             >
               REVIEW
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="contract"
+              to="/contract"
             >
               CONTACT
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="signup"
+              to="/signup"
             >
               LOGIN
             </Link>

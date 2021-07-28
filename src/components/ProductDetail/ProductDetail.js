@@ -1,14 +1,19 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import fakeData from '../../fackData/fackData.json'
 
 const ProductDetail = () => {
+    const {productId} = useParams()
+    const product = fakeData.find(pd => pd.id == productId)
+    const {titile, description, image, price} = product
     return (
         <section className="overflow-hidden text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap mx-auto lg:w-4/5">
-                    <img alt="ecommerce" className="object-cover object-center w-full h-64 rounded lg:w-1/2 lg:h-auto" src="https://images.pexels.com/photos/1667088/pexels-photo-1667088.jpeg" />
+                    <img alt="ecommerce" className="object-cover object-center w-full h-64 rounded lg:w-1/2 lg:h-auto" src={image}/>
                     <div className="w-full mt-6 lg:w-1/2 lg:pl-10 lg:py-6 lg:mt-0">
                         <h2 className="text-sm tracking-widest text-gray-500 title-font">BRAND NAME</h2>
-                        <h1 className="mb-1 text-3xl font-medium text-gray-900 title-font">The Catcher in the Rye</h1>
+                        <h1 className="mb-1 text-3xl font-medium text-gray-900 title-font">{titile}</h1>
                         <div className="flex mb-4">
                             <span className="flex items-center">
                                 <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
@@ -46,7 +51,7 @@ const ProductDetail = () => {
                                 </a>
                             </span>
                         </div>
-                        <p className="leading-relaxed">Fam locavore kickstarter distillery. Mixtape chillwave tumeric sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo juiceramps cornhole raw denim forage brooklyn. Everyday carry +1 seitan poutine tumeric. Gastropub blue bottle austin listicle pour-over, neutra jean shorts keytar banjo tattooed umami cardigan.</p>
+                        <p className="leading-relaxed">{description}</p>
                         <div className="flex items-center pb-5 mt-6 mb-5 border-b-2 border-gray-100">
                             <div className="flex">
                                 <span className="mr-3">Color</span>
@@ -72,8 +77,8 @@ const ProductDetail = () => {
                             </div>
                         </div>
                         <div className="flex">
-                            <span className="text-2xl font-medium text-gray-900 title-font">$58.00</span>
-                            <button className="flex px-6 py-2 ml-auto text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600">Button</button>
+                            <span className="text-2xl font-medium text-gray-900 title-font">${price}</span>
+                            <button className="flex px-6 py-2 ml-auto text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600">Add to Cart</button>
                             <button className="inline-flex items-center justify-center w-10 h-10 p-0 ml-4 text-gray-500 bg-gray-200 border-0 rounded-full">
                                 <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-5 h-5" viewBox="0 0 24 24">
                                     <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
