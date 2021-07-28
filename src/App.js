@@ -10,9 +10,22 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Shared/Navbar/Navbar";
 import Footer from './components/Shared/Footer/Footer';
+import { createContext, useState } from "react";
+import Review from "./components/Review/Review";
+// import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute'
+import Practice from "./components/Practice/Practice";
+
+
+
+
+export const UserContext = createContext();
 
 function App() {
+  
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     <Router>
       <Navbar />
       <Switch>
@@ -25,8 +38,17 @@ function App() {
         <Route path="/signup">
           <Signup />
         </Route>
+        <PrivateRoute path="/shubho">
+          <Practice/>
+        </PrivateRoute>
         <Route path="/contact">
           <Contact />
+        </Route>
+        {/* <PrivateRoute path="review">
+          <Review/>
+        </PrivateRoute> */}
+        <Route path="review">
+          <Review/>
         </Route>
         <Route path="*">
           <NotFound />
@@ -34,6 +56,7 @@ function App() {
       </Switch>
       <Footer />
     </Router>
+    </UserContext.Provider>
   );
 }
 
