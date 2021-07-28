@@ -1,6 +1,6 @@
 import { LOGIN_USER, LOGOUT_USER } from "../Actions/userActions";
 
-const userReducers = (state = { name: "John Doe" }, action) => {
+const userReducers = (state = {}, action) => {
   switch (action.type) {
     case LOGIN_USER:
       return action.payload;
