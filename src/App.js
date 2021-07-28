@@ -6,30 +6,41 @@ import Signup from "./components/Login/Signup";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Shared/Navbar/Navbar";
 import Footer from "./components/Shared/Footer/Footer";
+import { createContext, useState } from "react";
+import Review from "./components/Review/Review";
+import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
+
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/signup">
-          <Signup />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-        <Route path="*">
-          <NotFound />
-        </Route>
-      </Switch>
-      <Footer />
-    </Router>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/signup">
+            <Signup />
+          </Route>
+          <PrivateRoute path="/contract">
+            <Contact />
+          </PrivateRoute>
+          <Route path="review">
+            <Review />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    </UserContext.Provider>
   );
 }
 

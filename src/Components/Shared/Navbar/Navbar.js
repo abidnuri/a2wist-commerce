@@ -9,7 +9,7 @@ const Navbar = () => {
           <div>
             <Link
               className="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
-              to="none"
+              to="home"
             >
               eSwap
             </Link>
@@ -35,39 +35,45 @@ const Navbar = () => {
           <div className="flex flex-col md:flex-row md:mx-6">
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="none"
+              to="home"
             >
               HOME
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="none"
+              to="orders"
             >
               ORDERS
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="none"
+              to="products"
             >
               PRODUCTS
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="none"
+              to="discount"
             >
               DISCOUNT
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="none"
+              to="review"
             >
               REVIEW
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="none"
+              to="contract"
             >
               CONTACT
+            </Link>
+            <Link
+              className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
+              to="signup"
+            >
+              LOGIN
             </Link>
           </div>
 
