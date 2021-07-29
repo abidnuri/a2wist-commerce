@@ -19,24 +19,11 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/signup">
-            <Signup />
-          </Route>
-          <PrivateRoute path="/contract">
-            <Contact />
-          </PrivateRoute>
-          <Route path="review">
-            <Review />
-          </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route path="/signup" component={Signup} />
+          <PrivateRoute path="/contact" component={Contact} />
+          <Route path="review" component={Review} />
+          <Route path="*" component={NotFound} />
         </Switch>
         <Footer />
       </Router>

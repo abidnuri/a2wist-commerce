@@ -1,7 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const user = useSelector((state) => state.user);
   return (
     <nav className="bg-white shadow dark:bg-gray-800">
       <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
@@ -35,46 +37,55 @@ const Navbar = () => {
           <div className="flex flex-col md:flex-row md:mx-6">
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="home"
+              to="/"
             >
               HOME
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="orders"
+              to="/orders"
             >
               ORDERS
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="products"
+              to="/products"
             >
               PRODUCTS
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="discount"
+              to="/discount"
             >
               DISCOUNT
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="review"
+              to="/review"
             >
               REVIEW
             </Link>
             <Link
               className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="contract"
+              to="/contract"
             >
               CONTACT
             </Link>
-            <Link
-              className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
-              to="signup"
-            >
-              LOGIN
-            </Link>
+            {user.name ? (
+              <Link
+                className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
+                to="/dashboard"
+              >
+                {user.name}
+              </Link>
+            ) : (
+              <Link
+                className="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-indigo-400 md:mx-4 md:my-0"
+                to="/signup"
+              >
+                LOGIN
+              </Link>
+            )}
           </div>
 
           <div className="flex justify-center md:mx-4 md:my-0 md:block">
@@ -147,7 +158,7 @@ const Navbar = () => {
           <div className="flex justify-center md:mx-4 md:my-0 md:block">
             <Link
               className="relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
-              to='/signup'
+              to="/signup"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
