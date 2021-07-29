@@ -139,7 +139,6 @@ const Navbar = () => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-
         {/*Mobile Menu Start*/}
         {(ref) => (
           <div className="md:hidden" id="mobile-menu">
