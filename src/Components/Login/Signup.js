@@ -11,7 +11,7 @@ import "firebase/auth";
 import firebaseConfig from "./firebaseConfiq";
 import { useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../../Reedux/Actions/userActions";
+import { loginUser, registerUser } from "../../Reedux/Actions/userActions";
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
@@ -25,28 +25,6 @@ const Signup = () => {
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
 
-  //Handle Input Change value and valid email and password
-  // const handleChange = (event) => {
-  //   let isValidForm = true;
-  //   if (event.target.name === "email") {
-  //     isValidForm = /\S+@\S+\.\S+/.test(event.target.value);
-  //   }
-  //   if (event.target.name === "password") {
-  //     if (event.target.value.length >= 6) {
-  //       isValidForm = event.target.value.length >= 6;
-  //     } else {
-  //       const newUserInfo = {
-  //         error: "Password should have at least 6 character",
-  //       };
-  //     }
-  //   }
-  //   if (isValidForm) {
-  //     const newUserInfo = { ...loggedInUser };
-  //     newUserInfo[event.target.name] = event.target.value;
-  //     dispatch(loginUser(newUserInfo));
-  //   }
-  // };
-
   //Handle New User Log In Information
   const handleRegister = (event) => {
     event.preventDefault();
@@ -59,7 +37,7 @@ const Signup = () => {
         "https://i7.pngguru.com/preview/178/419/741/computer-icons-avatar-login-user-avatar.jpg",
       gender: event.target.gender.value,
     };
-    dispatch(loginUser(user));
+    dispatch(registerUser(user));
     history.replace(from);
   };
 
@@ -69,14 +47,7 @@ const Signup = () => {
     const user = {
       email: event.target.email.value,
       password: event.target.password.value,
-      // Dummy Info
-      name: "Abid Nuri",
-      gender: "male",
-      phone: "017548656",
-      image:
-        "https://i7.pngguru.com/preview/178/419/741/computer-icons-avatar-login-user-avatar.jpg",
     };
-    console.log(user);
     dispatch(loginUser(user));
     history.replace(from);
   };
