@@ -1,6 +1,9 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 const ProductDetail = () => {
+    const {productid} = useParams();
+    console.log(productid);
     return (
         <section className="overflow-hidden text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">
