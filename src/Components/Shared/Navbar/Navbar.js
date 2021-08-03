@@ -1,7 +1,7 @@
+import { Transition } from "@headlessui/react";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Transition } from "@headlessui/react";
 
 const Navbar = () => {
   const user = useSelector((state) => state.user);
@@ -23,41 +23,41 @@ const Navbar = () => {
               <div className="flex items-baseline ml-10 space-x-4">
                 <Link
                   to="/"
-                  className="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700"
+                  className="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-gray-700 transition duration-500 ease-in-out"
                 >
                   HOME
                 </Link>
 
                 <Link
                   to="/orders"
-                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
+                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white transition duration-500 ease-in-out"
                 >
                   ORDERS
                 </Link>
 
                 <Link
                   to="/products"
-                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
+                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white transition duration-500 ease-in-out"
                 >
                   PRODUCTS
                 </Link>
 
                 <Link
                   to="/discount"
-                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
+                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white transition duration-500 ease-in-out"
                 >
                   DISCOUNT
                 </Link>
 
                 <Link
                   to="/review"
-                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
+                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white transition duration-500 ease-in-out"
                 >
                   REVIEW
                 </Link>
                 <Link
                   to="/contact"
-                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
+                  className="px-3 py-2 text-sm font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white transition duration-500 ease-in-out"
                 >
                   CONTACT
                 </Link>
