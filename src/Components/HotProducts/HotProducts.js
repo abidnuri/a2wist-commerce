@@ -6,7 +6,7 @@ const HotProducts = () => {
 
   return (
     <div className="text-center">
-      <h1 className="text-4xl font-bold">HOT PRODUCTS</h1>
+      <h1 className="py-8 text-4xl font-bold">HOT PRODUCTS</h1>
       <p className="pt-2 pb-4">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt,
         porro?
