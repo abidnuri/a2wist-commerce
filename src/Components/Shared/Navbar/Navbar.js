@@ -21,16 +21,22 @@ const Navbar = () => {
             <Link>home</Link>
           </li>
           <li>
-            <Link>about</Link>
+            <Link>orders</Link>
           </li>
           <li>
-            <Link>projects</Link>
+            <Link>products</Link>
           </li>
           <li>
-            <Link>blogs</Link>
+            <Link>discount</Link>
+          </li>
+          <li>
+            <Link>review</Link>
           </li>
           <li>
             <Link>contact</Link>
+          </li>
+          <li>
+            <Link>login</Link>
           </li>
         </ul>
       </nav>
