@@ -1,0 +1,75 @@
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  background-color: rgba(209, 200, 200, 0.349);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 100px;
+  z-index: 100;
+}
+.logo-container a {
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+}
+nav .menu-btn i {
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+nav ul {
+  display: flex;
+}
+nav ul li a {
+  display: block;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 90px;
+  text-align: center;
+  padding: 10px 0px;
+}
+nav ul li a:hover {
+  background-color: #4b4b4b;
+}
+#click {
+  display: none;
+}
+@media (max-width: 940px) {
+  nav {
+    background-color: #06131fa8;
+    height: 90px;
+  }
+  nav .menu-btn i {
+    display: block;
+  }
+  nav ul {
+    position: absolute;
+    top: 90px;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: #06131fa8;
+    transition: all 0.4s ease-in-out;
+  }
+  #click:checked ~ ul {
+    left: 0%;
+  }
+  #click:checked ~ .menu-btn i::before {
+    content: "\f00d";
+  }
+  nav ul li {
+    margin-top: 40px;
+  }
+  nav ul li a {
+    font-size: 25px;
+    text-align: center;
+  }
+}
