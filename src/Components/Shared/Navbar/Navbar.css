@@ -1,5 +1,5 @@
 nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -9,7 +9,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0px 80px;
-  z-index: 100;
+  z-index: 1;
 }
 .logo-container a {
   font-size: 40px;

@@ -21,6 +21,7 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
+          <div className="mt-20">
           <Route exact path="/" component={Home} />
           <Route path="/signup" component={Signup} />
           <PrivateRoute path="/contact" component={Contact} />
@@ -28,6 +29,7 @@ function App() {
           <Route path="/products" component={ShopPage} />
           <Route path="/product/:productid" component={ProductDetail} />
           <Route path="*" component={NotFound} />
+          </div>
         </Switch>
         <Footer />
       </Router>
