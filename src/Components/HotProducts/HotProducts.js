@@ -5,38 +5,38 @@ const HotProducts = () => {
   const products = useSelector((state) => state.products.all);
 
   return (
-    <div className="text-center mt-10 pt-10">
+    <div className="pt-10 mt-10 text-center">
       <h1 className="text-4xl font-bold">HOT PRODUCTS</h1>
       <p className="pt-2 pb-4 text-lg font-medium">
         Check our hot products on sale and get it now.
       </p>
       <div className="inline">
         <a
-          className="my-1 text-md font-medium text-gray-700 dark:text-gray-200 hover:text-red-400 hover:underline dark:hover:text-red-400 md:mx-4 md:my-0"
+          className="my-1 font-medium text-gray-700 text-md dark:text-gray-200 hover:text-red-400 hover:underline dark:hover:text-red-400 md:mx-4 md:my-0"
           href="##"
         >
           NEW ARRIVAL
         </a>
         <a
-          className="my-1 text-md font-medium text-gray-700 dark:text-gray-200 hover:text-red-400 hover:underline dark:hover:text-red-400 md:mx-4 md:my-0"
+          className="my-1 font-medium text-gray-700 text-md dark:text-gray-200 hover:text-red-400 hover:underline dark:hover:text-red-400 md:mx-4 md:my-0"
           href="##"
         >
           TREADING
         </a>
         <a
-          className="my-1 text-md font-medium text-gray-700 dark:text-gray-200 hover:text-red-400 hover:underline dark:hover:text-red-400 md:mx-4 md:my-0"
+          className="my-1 font-medium text-gray-700 text-md dark:text-gray-200 hover:text-red-400 hover:underline dark:hover:text-red-400 md:mx-4 md:my-0"
           href="##"
         >
           BEST SELLERS
         </a>
         <a
-          className="my-1 text-md font-medium text-gray-700 dark:text-gray-200 hover:text-red-400 hover:underline dark:hover:text-red-400 md:mx-4 md:my-0"
+          className="my-1 font-medium text-gray-700 text-md dark:text-gray-200 hover:text-red-400 hover:underline dark:hover:text-red-400 md:mx-4 md:my-0"
           href="##"
         >
           FEATURE
         </a>
         <a
-          className="my-1 text-md font-medium text-gray-700 dark:text-gray-200 hover:text-red-400 hover:underline dark:hover:text-red-400 md:mx-4 md:my-0"
+          className="my-1 font-medium text-gray-700 text-md dark:text-gray-200 hover:text-red-400 hover:underline dark:hover:text-red-400 md:mx-4 md:my-0"
           href="##"
         >
           ON SALE

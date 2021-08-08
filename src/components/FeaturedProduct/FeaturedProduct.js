@@ -37,7 +37,7 @@ const FeaturedProduct = () => {
   return (
     <div>
       <section className="mt-8 featured-main">
-        <h1 className="text-4xl font-bold text-center mb-8">
+        <h1 className="mb-8 text-4xl font-bold text-center">
           FEATURED PRODUCTS
         </h1>
         <div className="container grid grid-cols-1 grid-rows-2 gap-4 px-4 mx-auto md:grid-cols-3">
