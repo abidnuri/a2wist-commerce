@@ -1,3 +1,5 @@
+import { createContext, useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Contact from "./components/Contact/Contact";
 import Home from "./components/Home/Home";
@@ -13,6 +15,7 @@ import ShopPage from "./components/ShopPage/ShopPage";
 export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
