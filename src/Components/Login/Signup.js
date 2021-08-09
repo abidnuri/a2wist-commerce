@@ -7,8 +7,15 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 
+
+
 const Signup = () => {
   const [option, setOption] = useState("register");
+  const [email, setEmail] = useState("");
+  
+  const handleSubmit = () => {
+
+  }
   return (
     <section className="mt-4 text-gray-600 body-font">
       <div className="container flex flex-wrap items-center px-5 mx-auto sm:flex-nowrap">
@@ -39,10 +46,10 @@ const Signup = () => {
               <span className="text-xl text-white cursor-pointer">Login</span>
             </button>
           </div>
-          <form action="">
+          <form action="" onSubmit={handleSubmit}>
             <div className="mb-4">
               <label
-                htmlFor="email"
+                htmlFor="email"          
                 className="text-sm leading-7 text-gray-600"
               >
                 Email
@@ -52,6 +59,8 @@ const Signup = () => {
                 id="email"
                 required
                 name="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
                 className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
               />
             </div>
