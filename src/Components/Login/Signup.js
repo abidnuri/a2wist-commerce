@@ -6,15 +6,27 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { auth } from "./firebase.config";
 
 
 const Signup = () => {
   const [option, setOption] = useState("register");
   const [email, setEmail] = useState("");
-  
-  const handleSubmit = () => {
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const config = {
+      url: 'http://localhost:3000/signup/complete',
+      handleCodeInApp: true,
+
+    }
+    await auth.sendSignInLinkToEmail(email, config);
+    toast.success(`Email is send to this ${email}. Click the link to complete your registration`);
+
+    window.localStorage.setItem('emailForRegistration', email);
+    setEmail('');
   }
   return (
     <section className="mt-4 text-gray-600 body-font">
@@ -30,6 +42,7 @@ const Signup = () => {
           <h2 className="mb-1 text-3xl font-bold text-center text-gray-900 title-font">
             {option === "register" ? "Sign Up" : "Login"}
           </h2>
+          <ToastContainer />
           <div className="flex justify-between">
             <button
               onClick={() => setOption("register")}
@@ -49,7 +62,7 @@ const Signup = () => {
           <form action="" onSubmit={handleSubmit}>
             <div className="mb-4">
               <label
-                htmlFor="email"          
+                htmlFor="email"
                 className="text-sm leading-7 text-gray-600"
               >
                 Email
