@@ -6,19 +6,19 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import { auth } from "./firebase.config";
 
 
 const Signup = () => {
   const [option, setOption] = useState("register");
   const [email, setEmail] = useState("");
-
+  // require('dotenv').config()
   const handleSubmit = async (e) => {
     e.preventDefault();
     const config = {
-      url: 'http://localhost:3000/signup/complete',
+      // url: process.env.REGISTER_REDIRECT_URL,
+      url: 'http://localhost:3000/complete',
       handleCodeInApp: true,
 
     }
@@ -42,7 +42,7 @@ const Signup = () => {
           <h2 className="mb-1 text-3xl font-bold text-center text-gray-900 title-font">
             {option === "register" ? "Sign Up" : "Login"}
           </h2>
-          <ToastContainer />
+
           <div className="flex justify-between">
             <button
               onClick={() => setOption("register")}
