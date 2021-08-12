@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import { toast } from 'react-toastify';
-import { auth } from "./firebase.config";
+import { auth, googleAuthProvider } from "./firebase.config";
 import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router';
 
@@ -16,7 +16,7 @@ const Signup = () => {
   const [option, setOption] = useState("register");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const [loading, setLoading] = useState(false);
 
   let dispatch = useDispatch();
@@ -62,6 +62,26 @@ const Signup = () => {
       toast.error(error.message);
       setLoading(false);
     }
+  }
+
+  const googleLogin = async (e) => {
+    auth.signInWithPopup(googleAuthProvider)
+      .then(async (result) => {
+        const { user } = result;
+        const idTokenResult = await user.getIdTokenResult();
+        dispatch({
+          type: "LOGGED_IN_USER",
+          payload: {
+            email: user.email,
+            token: idTokenResult.token,
+          },
+        });
+        history.push("/");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(err.message);
+      });
   }
   return (
     <section className="mt-4 text-gray-600 body-font">
@@ -143,7 +163,7 @@ const Signup = () => {
                   disabled={!email || password.length < 6}
                   className="px-6 py-2 text-lg text-white bg-green-500 border-0 rounded focus:outline-none hover:bg-indigo-600"
                 >
-                  Login
+                  {loading ? <span>Wait For Login...</span> : <span>Login</span>}
                 </button>
               </>
             )}
@@ -170,12 +190,9 @@ const Signup = () => {
             </p>
           }
 
-
-
-
           <p className="my-3 text-xl font-bold text-center">Or</p>
           <div className="flex m-auto my-6 text-center">
-            <div
+            <div onClick={googleLogin}
               className="p-4 m-3 border border-opacity-100 border-light-blue-500 hover:border-blue-700 hover:text-green-700"
             >
               <FontAwesomeIcon className="text-2xl " icon={faGoogle} />
