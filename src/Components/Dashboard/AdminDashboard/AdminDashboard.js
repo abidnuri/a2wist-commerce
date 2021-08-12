@@ -13,6 +13,7 @@ const AdminDashboard = () => {
                 <Switch>
                     {/* <Route exact path="/dashboard/" component={UploadProduct} /> */}
                     <Route exact path="/dashboard/uploadproduct" component={UploadProduct} />
+                    <Route exact path="/dashboard/" component={UploadProduct} />
                     <Route exact path="/dashboard/orders" component={Orders} />
                     <Route exact path="/dashboard/allproducts" component={AllProducts} />
                 </Switch>
