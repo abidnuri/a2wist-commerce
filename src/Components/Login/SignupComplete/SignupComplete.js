@@ -48,7 +48,7 @@ const SignupComplete = ({ history }) => {
                 console.log("user", user, "idtoken", idTokenResult);
 
                 // redirect user
-                // history.push('/');
+                history.push('/');
             }
         } catch (error) {
             console.log(error);

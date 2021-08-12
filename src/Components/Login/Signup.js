@@ -8,12 +8,22 @@ import {
 import { useState } from "react";
 import { toast } from 'react-toastify';
 import { auth } from "./firebase.config";
+import { useDispatch } from "react-redux";
+import { useHistory } from 'react-router';
 
 
 const Signup = () => {
   const [option, setOption] = useState("register");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
+  const [loading, setLoading] = useState(false);
+
+  let dispatch = useDispatch();
+
+  const history = useHistory();
   // require('dotenv').config()
+  //signup function
   const handleSubmit = async (e) => {
     e.preventDefault();
     const config = {
@@ -27,6 +37,31 @@ const Signup = () => {
 
     window.localStorage.setItem('emailForRegistration', email);
     setEmail('');
+  }
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    // console.table(email, password);
+    try {
+      const result = await auth.signInWithEmailAndPassword(email, password);
+      // console.log(result);
+      const { user } = result;
+      const idTokenResult = await user.getIdTokenResult();
+
+      dispatch({
+        type: "LOGGED_IN_USER",
+        payload: {
+          email: user.email,
+          token: idTokenResult.token,
+        },
+      });
+      history.push("/");
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+      setLoading(false);
+    }
   }
   return (
     <section className="mt-4 text-gray-600 body-font">
@@ -59,7 +94,7 @@ const Signup = () => {
               <span className="text-xl text-white cursor-pointer">Login</span>
             </button>
           </div>
-          <form action="" onSubmit={handleSubmit}>
+          <form action="" onSubmit={option === "register" ? handleSubmit : handleLogin}>
             <div className="mb-4">
               <label
                 htmlFor="email"
@@ -96,12 +131,16 @@ const Signup = () => {
                     type="password"
                     id="password"
                     required
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
                     name="password"
                     className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
                   />
                 </div>
                 <button
                   type="submit"
+                  onClick={handleLogin}
+                  disabled={!email || password.length < 6}
                   className="px-6 py-2 text-lg text-white bg-green-500 border-0 rounded focus:outline-none hover:bg-indigo-600"
                 >
                   Login
@@ -150,7 +189,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 
