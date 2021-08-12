@@ -13,12 +13,47 @@ const SignupComplete = ({ history }) => {
     const [email, setEmail] = useState(``);
     const [password, setPassword] = useState("");
 
-    useState(() => {
-        console.log(window.localStorage.getItem("emailForRegistration"));
+    useEffect(() => {
+        const emailInLocalStorage = window.localStorage.getItem("emailForRegistration")
+        setEmail(emailInLocalStorage);
+
+        console.log(emailInLocalStorage);
+        console.log(window.location.href);
     }, []);
 
     const completeRegistration = async (e) => {
         e.preventDefault();
+
+        // validating email and password
+        if (!email || !password) {
+            toast.error(`Email & password must be provided`);
+            return;
+        }
+        if (password.length < 6) {
+            toast.error(`Please enter at least 6 characters`);
+            return;
+        }
+
+        try {
+            const result = await auth.signInWithEmailLink(email, window.location.href)
+            console.log(result);
+
+            if (result.user.emailVerified) {
+                // remove the user from local storage
+                window.localStorage.removeItem('emailForRegistration');
+                //get the userid token here
+                let user = auth.currentUser
+                await user.updatePassword(password);
+                const idTokenResult = await user.getIdTokenResult();
+                console.log("user", user, "idtoken", idTokenResult);
+
+                // redirect user
+                // history.push('/');
+            }
+        } catch (error) {
+            console.log(error);
+            toast.error(error.message)
+        }
     };
 
     return (
@@ -47,6 +82,7 @@ const SignupComplete = ({ history }) => {
                                 type="email"
                                 id="email"
                                 required
+                                disabled
                                 name="email"
                                 value={email}
                                 className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
@@ -61,6 +97,9 @@ const SignupComplete = ({ history }) => {
                                 id="password"
                                 required
                                 name="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                placeholder="Set your password"
                                 className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
                             />
                         </div>
