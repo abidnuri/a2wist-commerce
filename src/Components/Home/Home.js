@@ -2,7 +2,7 @@ import React from "react";
 import Discount from "../Discount/Discount";
 import FeaturedProduct from "../FeaturedProduct/FeaturedProduct";
 import Slider from "../Slider/Slider";
-import HotProducts from "./../HotProducts/HotProducts";
+import HotProducts from "../HotProducts/HotProducts";
 // import SingleProduct from "../SingleProduct/SingleProduct";
 
 const Home = () => {
