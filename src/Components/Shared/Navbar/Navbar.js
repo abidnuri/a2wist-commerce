@@ -57,14 +57,14 @@ const Navbar = () => {
           }
           {user &&
             <li>
-              <Link>{user.email && user.email.split('@')[0]}</Link>
+              <Link className="text-red-800 bg-gray-50">{user.email && user.email.split('@')[0]}</Link>
             </li>
           }
           {user &&
             <li>
               <Link onClick={logout}>Logout</Link>
             </li>
-          }          
+          }
         </ul>
       </nav>
     </div>

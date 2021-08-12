@@ -154,6 +154,7 @@ const Signup = () => {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     name="password"
+                    placeholder="Enter your password"
                     className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-white border border-gray-300 rounded outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
                   />
                 </div>
@@ -193,14 +194,14 @@ const Signup = () => {
           <p className="my-3 text-xl font-bold text-center">Or</p>
           <div className="flex m-auto my-6 text-center">
             <div onClick={googleLogin}
-              className="p-4 m-3 border border-opacity-100 border-light-blue-500 hover:border-blue-700 hover:text-green-700"
+              className="p-4 m-3 border border-opacity-100 cursor-pointer border-light-blue-500 hover:border-blue-700 hover:text-green-700"
             >
               <FontAwesomeIcon className="text-2xl " icon={faGoogle} />
             </div>
-            <div className="p-4 m-3 border border-opacity-100 border-light-blue-500 hover:border-blue-700 hover:text-blue-700">
+            <div className="p-4 m-3 border border-opacity-100 cursor-pointer border-light-blue-500 hover:border-blue-700 hover:text-blue-700">
               <FontAwesomeIcon className="text-2xl " icon={faFacebook} />
             </div>
-            <div className="p-4 m-3 border border-opacity-100 border-light-blue-500 hover:border-blue-700 hover:text-blue-700">
+            <div className="p-4 m-3 border border-opacity-100 cursor-pointer border-light-blue-500 hover:border-blue-700 hover:text-blue-700">
               <FontAwesomeIcon className="text-2xl " icon={faTwitter} />
             </div>
           </div>
