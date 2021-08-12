@@ -1,8 +1,8 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import HotSingleProduct from "../HotSingleProduct/HotSingleProduct";
+import fackData from '../../fackData/fackData.json'
+
 const HotProducts = () => {
-  const products = useSelector((state) => state.products.all);
 
   return (
     <div className="pt-10 mt-10 text-center">
@@ -43,9 +43,9 @@ const HotProducts = () => {
         </a>
       </div>
       <div className="grid grid-cols-1 gap-5 p-10 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">
-        {products.map((product) => (
-          <HotSingleProduct product={product} key={product.id} />
-        ))}
+        {
+          fackData.map(product => <HotSingleProduct product={product} key={product.id}></HotSingleProduct>)
+        }
       </div>
     </div>
   );

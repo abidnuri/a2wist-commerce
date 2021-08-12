@@ -8,12 +8,12 @@ export default function Dashboard() {
   // const user = useSelector((state) => state.user);
   const [role, setRole] = useState('admin')
   return (
-    <div className="text-center h-screen">
+    <div className="h-screen text-center">
       {
         !role && <>
           <h1 className="text-2xl text-grey-600">Select user role (temporary)</h1>
-          <button className="bg-green-400 p-2 rounded-md mx-10" onClick={() => setRole('admin')}>Admin</button>
-          <button className="bg-red-400 p-2 rounded-md mx-10" onClick={() => setRole('user')}>User</button>
+          <button className="p-2 mx-10 bg-green-400 rounded-md" onClick={() => setRole('admin')}>Admin</button>
+          <button className="p-2 mx-10 bg-red-400 rounded-md" onClick={() => setRole('user')}>User</button>
         </>
       }
       {
