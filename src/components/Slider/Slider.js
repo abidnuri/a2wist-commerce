@@ -72,8 +72,8 @@ export default function Slider() {
     <div className="slider">
       <div className={"slider__item " + className}>
         <div className="slider__item__info">
-          <h3>{data.description}</h3>
-          <h1>{data.name}</h1>
+          <h3 className="mt-20 sm:text-xl md:text-3xl lg:text-3xl">{data.description}</h3>
+          <h1 className="sm:text-2xl md:text-5xl lg:text-8xl lg:mb-6">{data.name}</h1>
           <h3>Check Out The Latest Deals On Clothes</h3>
           <button>Shop Now</button>
         </div>
