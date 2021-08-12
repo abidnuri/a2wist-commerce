@@ -54,6 +54,7 @@ function App() {
           <Route path="/review" component={Review} />
           <Route path="/products" component={ShopPage} />
           <Route path="/product/:productid" component={ProductDetail} />
+          <Route path="/dashboard" component={Dashboard} />
           <Route path="/complete" component={SignupComplete} />
           <Route path="*" component={NotFound} />
         </Switch>
