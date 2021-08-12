@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import firebase from "firebase";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 const Navbar = () => {
-
   let dispatch = useDispatch();
   let history = useHistory();
+
+  let { user } = useSelector((state) => ({ ...state }));
 
   const logout = () => {
     firebase.auth().signOut();
@@ -31,7 +32,8 @@ const Navbar = () => {
         </label>
         <ul>
           <li>
-            <Link to="/">home</Link>
+            <Link to="/">home </Link>
+            {/*JSON.stringify(user)*/}
           </li>
           <li>
             <Link to="/orders">orders</Link>
@@ -48,12 +50,21 @@ const Navbar = () => {
           <li>
             <Link to="/contact">contact</Link>
           </li>
-          <li>
-            <Link to="/signup">Account</Link>
-          </li>
-          <li>
-            <Link onClick={logout}>Logout</Link>
-          </li>
+          {!user &&
+            <li>
+              <Link to="/signup">Account</Link>
+            </li>
+          }
+          {user &&
+            <li>
+              <Link>{user.email && user.email.split('@')[0]}</Link>
+            </li>
+          }
+          {user &&
+            <li>
+              <Link onClick={logout}>Logout</Link>
+            </li>
+          }          
         </ul>
       </nav>
     </div>
