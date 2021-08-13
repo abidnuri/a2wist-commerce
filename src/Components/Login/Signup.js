@@ -28,7 +28,7 @@ const Signup = () => {
     e.preventDefault();
     const config = {
       // url: process.env.REGISTER_REDIRECT_URL,
-      url: 'https://eswap.netlify.app/complete',
+      url: 'https://eswap-commerce.web.app/complete',
       handleCodeInApp: true,
 
     }
