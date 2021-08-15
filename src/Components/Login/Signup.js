@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 import { auth, googleAuthProvider } from "./firebase.config";
 import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 const Signup = () => {
@@ -27,8 +28,8 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const config = {
-      // url: process.env.REGISTER_REDIRECT_URL,
-      url: 'https://eswap-commerce.web.app/complete',
+      // url: process.env.REACT_APP_REGISTER_REDIRECT_URL,
+      url: 'http://localhost:3000/complete',
       handleCodeInApp: true,
 
     }
@@ -180,15 +181,23 @@ const Signup = () => {
                 Login
               </span>
             </p> :
-            <p className="mt-3 text-xl text-gray-500">
-              If no account{" "}
-              <span
-                onClick={() => setOption("register")}
+            <div className="flex justify-between mt-3 text-xl text-gray-500 ">
+              <div className="left">
+                Don't have a account{" "}
+                <span
+                  onClick={() => setOption("register")}
+                  className="text-blue-500 cursor-pointer text-md text- hover:text-red-500"
+                >
+                  Signup
+                </span>
+              </div>
+              <Link to="/forget"
                 className="text-blue-500 cursor-pointer text-md text- hover:text-red-500"
               >
-                Signup
-              </span>
-            </p>
+                Forget Password
+              </Link>
+
+            </div>
           }
 
           <p className="my-3 text-xl font-bold text-center">Or</p>
