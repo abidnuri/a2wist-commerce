@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -8,7 +8,7 @@ import {
 import { useState } from "react";
 import { toast } from 'react-toastify';
 import { auth, googleAuthProvider } from "./firebase.config";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 
@@ -23,6 +23,11 @@ const Signup = () => {
   let dispatch = useDispatch();
 
   const history = useHistory();
+
+  const { user } = useSelector((state) => ({ ...state }));
+  useEffect(() => {
+    if (user) history.push("/");
+  }, [user]);
   // require('dotenv').config()
   //signup function
   const handleSubmit = async (e) => {

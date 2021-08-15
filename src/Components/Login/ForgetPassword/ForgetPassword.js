@@ -1,12 +1,20 @@
 import React from 'react';
 import { useState } from 'react';
 import { auth } from '../firebase.config';
-import Signup from './../Signup';
 import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+// import { useHistory } from 'react-router-dom';
 
-const ForgetPassword = () => {
+const ForgetPassword = ({ history }) => {
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
+
+    const { user } = useSelector((state) => ({ ...state }));
+    // const history = useHistory();
+    useEffect(() => {
+        if (user) history.push("/");
+    }, [user]);
 
     const handleForgetPassword = async (e) => {
         e.preventDefault();
@@ -15,7 +23,6 @@ const ForgetPassword = () => {
             // url: process.env.REACT_APP_FORGET_PASSWORD_REDIRECT_URL,
             url: 'http://localhost:3000/signup',
             handleCodeInApp: true,
-
         }
 
         await auth.sendPasswordResetEmail(email, config)
@@ -29,6 +36,7 @@ const ForgetPassword = () => {
                 toast.error(error.message);
             })
     }
+
 
     return (
         <div className="container grid grid-cols-1 grid-rows-1 gap-4 px-4 mx-auto md:grid-cols-2">
