@@ -75,7 +75,12 @@ export default function Slider() {
           <h3 className="mt-20 sm:text-xl md:text-3xl lg:text-3xl">{data.description}</h3>
           <h1 className="sm:text-2xl md:text-5xl lg:text-8xl lg:mb-6">{data.name}</h1>
           <h3>Check Out The Latest Deals On Clothes</h3>
-          <button>Shop Now</button>
+          
+          <div className="mt-4">
+          <button className="bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">
+          Shop Now
+          </button>
+          </div>
         </div>
         <div
           className="slider__item__btns"
@@ -97,7 +102,7 @@ export default function Slider() {
           })}
         </div>
         <div className="slider__item__image">
-          <img src={data.img} alt="" />
+          <img className="h-full w-screen object-cover" src={data.img} alt="" />
         </div>
       </div>
     </div>
