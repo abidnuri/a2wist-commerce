@@ -47,6 +47,19 @@ const Navbar = () => {
           <li>
             <Link to="/review">review</Link>
           </li>
+          <li className="dropdown inline-block relative">
+            <Link className="" to="/category">
+            Category
+            </Link>
+
+            <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+      <li class=""><Link class="rounded-t bg-gray-200  py-2 px-6 block whitespace-no-wrap" to="/">T-Shirt</Link></li>
+      <li class=""><Link class="bg-gray-200  py-2 px-6 block whitespace-no-wrap" to="/">Pant</Link></li>
+      <li class=""><Link class="rounded-b bg-gray-200  py-2 px-6 block whitespace-no-wrap" to="/">Others</Link></li>
+    </ul>
+
+
+          </li>
           <li>
             <Link to="/contact">contact</Link>
           </li>

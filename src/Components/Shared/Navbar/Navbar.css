@@ -71,3 +71,8 @@ nav ul li a:hover {
     text-align: center;
   }
 }
+
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
