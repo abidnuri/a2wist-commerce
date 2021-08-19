@@ -11,7 +11,17 @@ import { auth, googleAuthProvider } from "./firebase.config";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
+const createOrUpdateUser = async (authtoken) => {
+  return axios.post('http://localhost:3333/fireauth/create-or-update-user',
+    {},
+    {
+      headers: {
+        authtoken,
+      }
+    })
+}
 
 const Signup = () => {
   const [option, setOption] = useState("register");
@@ -55,13 +65,17 @@ const Signup = () => {
       const { user } = result;
       const idTokenResult = await user.getIdTokenResult();
 
-      dispatch({
-        type: "LOGGED_IN_USER",
-        payload: {
-          email: user.email,
-          token: idTokenResult.token,
-        },
-      });
+      createOrUpdateUser(idTokenResult.token).then(
+        res => console.log('create or update response', res)
+      ).catch()
+            
+      // dispatch({
+      //   type: "LOGGED_IN_USER",
+      //   payload: {
+      //     email: user.email,
+      //     token: idTokenResult.token,
+      //   },
+      // });
       history.push("/");
     } catch (error) {
       console.log(error);
