@@ -9,18 +9,7 @@ import { toast } from 'react-toastify';
 import { auth } from "../firebase.config";
 import { useHistory } from 'react-router';
 import { useDispatch, useSelector } from "react-redux";
-import axios from 'axios';
-
-
-const createOrUpdateUser = async (authtoken) => {
-    return axios.post('http://localhost:3333/fireauth/create-or-update-user',
-        {},
-        {
-            headers: {
-                authtoken,
-            }
-        })
-}
+import {createOrUpdateUser} from '../../functions/firebaseAuth'
 
 const SignupComplete = ({ history }) => {
     const [email, setEmail] = useState(``);
@@ -76,7 +65,7 @@ const SignupComplete = ({ history }) => {
                             },
                         });
                     }
-                ).catch()
+                ).catch((err) => console.log(err))
 
                 // redirect user
                 history.push('/');

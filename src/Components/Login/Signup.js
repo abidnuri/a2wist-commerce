@@ -11,17 +11,7 @@ import { auth, googleAuthProvider } from "./firebase.config";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
-
-const createOrUpdateUser = async (authtoken) => {
-  return axios.post('http://localhost:3333/fireauth/create-or-update-user',
-    {},
-    {
-      headers: {
-        authtoken,
-      }
-    })
-}
+import {createOrUpdateUser} from '../functions/firebaseAuth'
 
 const Signup = () => {
   const [option, setOption] = useState("register");
@@ -80,7 +70,7 @@ const Signup = () => {
             },
           });
         }
-      ).catch()
+      ).catch((err) => console.log(err))
     
       // history.push("/");
     } catch (error) {
