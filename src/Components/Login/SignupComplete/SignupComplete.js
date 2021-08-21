@@ -8,10 +8,25 @@ import {
 import { toast } from 'react-toastify';
 import { auth } from "../firebase.config";
 import { useHistory } from 'react-router';
+import { useDispatch, useSelector } from "react-redux";
+import axios from 'axios';
+
+
+const createOrUpdateUser = async (authtoken) => {
+    return axios.post('http://localhost:3333/fireauth/create-or-update-user',
+        {},
+        {
+            headers: {
+                authtoken,
+            }
+        })
+}
 
 const SignupComplete = ({ history }) => {
     const [email, setEmail] = useState(``);
     const [password, setPassword] = useState("");
+    let dispatch = useDispatch(); 
+    const { user } = useSelector((state) => ({ ...state }));
 
     useEffect(() => {
         const emailInLocalStorage = window.localStorage.getItem("emailForRegistration")
@@ -46,6 +61,22 @@ const SignupComplete = ({ history }) => {
                 await user.updatePassword(password);
                 const idTokenResult = await user.getIdTokenResult();
                 console.log("user", user, "idtoken", idTokenResult);
+
+                createOrUpdateUser(idTokenResult.token).then(
+                    res => {
+                        // console.log('create or update response', res);
+                        dispatch({
+                            type: "LOGGED_IN_USER",
+                            payload: {
+                                name: res.data.name,
+                                email: res.data.email,
+                                token: idTokenResult.token,
+                                role: res.data.role,
+                                _id: res.data._id,
+                            },
+                        });
+                    }
+                ).catch()
 
                 // redirect user
                 history.push('/');
