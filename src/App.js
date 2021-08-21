@@ -17,7 +17,8 @@ import SignupComplete from './components/Login/SignupComplete/SignupComplete';
 import { auth } from "./components/Login/firebase.config";
 import { useDispatch } from "react-redux";
 import ForgetPassword from './components/Login/ForgetPassword/ForgetPassword';
-import { currentUser } from '../src/components/functions/firebaseAuth'
+import { currentUser } from "./components/functions/firebaseAuth";
+
 
 
 function App() {
@@ -27,30 +28,28 @@ function App() {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
-        const idTokenResult = await user.getIdToken()
+        const idTokenResult = await user.getIdTokenResult();
+        console.log("user", user);
 
-        currentUser(idTokenResult.token).then(
-          res => {
-              // console.log('create or update response', res);
-              dispatch({
-                  type: "LOGGED_IN_USER",
-                  payload: {
-                      name: res.data.name,
-                      email: res.data.email,
-                      token: idTokenResult.token,
-                      role: res.data.role,
-                      _id: res.data._id,
-                  },
-              });
-          }
-      ).catch((err) => console.log(err))
-      
+        currentUser(idTokenResult.token)
+          .then((res) => {
+            dispatch({
+              type: "LOGGED_IN_USER",
+              payload: {
+                name: res.data.name,
+                email: res.data.email,
+                token: idTokenResult.token,
+                role: res.data.role,
+                _id: res.data._id,
+              },
+            });
+          })
+          .catch((err) => console.log(err));
       }
-    })
-
-    //cleaning 
+    });
+    // cleanup
     return () => unsubscribe();
-  }, [])
+  }, []);
 
   return (
     <Router>

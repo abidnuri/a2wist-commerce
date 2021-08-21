@@ -25,11 +25,13 @@ const Signup = () => {
   const history = useHistory();
 
   const { user } = useSelector((state) => ({ ...state }));
+
   
   useEffect(() => {
     if (user) history.push("/");
   }, [user]);
   // require('dotenv').config()
+
   //signup function
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,6 +48,15 @@ const Signup = () => {
     setEmail('');
   }
 
+  //redirect function
+  const roleBasedRedirect = (res) =>{
+    if(res.data.role === 'admin'){
+      history.push('/dashboard')
+    }else{
+      history.push('/home')
+    }
+  }
+  
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -69,10 +80,12 @@ const Signup = () => {
               _id: res.data._id,
             },
           });
+          roleBasedRedirect(res);
         }
       ).catch((err) => console.log(err))
     
       // history.push("/");
+      
     } catch (error) {
       console.log(error);
       toast.error(error.message);

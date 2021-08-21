@@ -11,11 +11,13 @@ export const createOrUpdateUser = async (authtoken) => {
 }
 
 export const currentUser = async (authtoken) => {
-    return axios.post('http://localhost:3333/fireauth/current-user',
+    return await axios.post('http://localhost:3333/fireauth/current-user',
       {},
       {
         headers: {
           authtoken,
         },
-      });
-  }
+      }
+    );
+  };
+  
