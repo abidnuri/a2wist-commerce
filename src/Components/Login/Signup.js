@@ -49,13 +49,13 @@ const Signup = () => {
   }
 
   //redirect function
-  const roleBasedRedirect = (res) =>{
-    if(res.data.role === 'admin'){
-      history.push('/dashboard')
-    }else{
-      history.push('/home')
+  const roleBasedRedirect = (res) => {
+    if (res.data.role === "admin") {
+      history.push("/dashboard");
+    } else {
+      history.push("/user/history");
     }
-  }
+  };
   
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -112,8 +112,9 @@ const Signup = () => {
                 _id: res.data._id,
               },
             });
+            roleBasedRedirect(res);
           }
-        ).catch()
+        ).catch((err) => console.log(err))
         
         history.push("/");
       })
