@@ -11,11 +11,11 @@ const AdminDashboard = () => {
             <Sidebar />
             <div className="p-4 lg:w-4/5 w-screen">
                 <Switch>
-                    {/* <Route exact path="/dashboard/" component={UploadProduct} /> */}
-                    <Route exact path="/dashboard/uploadproduct" component={UploadProduct} />
                     <Route exact path="/dashboard/" component={UploadProduct} />
-                    <Route exact path="/dashboard/orders" component={Orders} />
-                    <Route exact path="/dashboard/allproducts" component={AllProducts} />
+                    <Route path="/dashboard/uploadproduct" component={UploadProduct} />
+                    <Route path="/dashboard/orders" component={Orders} />
+                    <Route path="/dashboard/allproducts" component={AllProducts} />
+                    <Route path="/dashboard/allproducts" component={AllProducts} />
                 </Switch>
             </div>
         </div>

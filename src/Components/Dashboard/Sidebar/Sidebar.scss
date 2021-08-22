@@ -1,10 +1,11 @@
 .dashboard-sidebar {
-  position: fixed;
+  background-color: #90a4ae;
   li {
-    background-color: aqua;
-    margin: 20px 5px;
-    padding: 10px 80px;
+    background-color: #607d8b;
+    margin: 15px 5px;
+    padding: 1rem;
     border-radius: 15px;
     font-weight: 600;
+    color: white;
   }
 }

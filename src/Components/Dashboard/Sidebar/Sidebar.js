@@ -7,13 +7,14 @@ import './Sidebar.scss';
 
 const Sidebar = () => {
     return (
-        <div className="hidden lg:block w-1/5 h-screen text-left">
-            <ul className="dashboard-sidebar">
-                <Link to="/dashboard"><li><FontAwesomeIcon icon={faChartLine} className="text-gray-600" /> Dashboard</li></Link>
+        <div className="hidden relative bg-sidebar h-screen w-64 sm:block shadow-xl p-1 dashboard-sidebar">
+            <ul>
+                <p className="text-lg border-b-2 py-5">Admin</p>
+                <Link to="/dashboard"><li><FontAwesomeIcon icon={faChartLine} /> Dashboard</li></Link>
                 <Link to="/dashboard/orders"><li><FontAwesomeIcon icon={faListAlt} /> Orders</li></Link>
                 <Link to="/dashboard/allproducts"><li><FontAwesomeIcon icon={faListAlt} /> All products</li></Link>
                 <Link to="/dashboard/uploadproduct"><li><FontAwesomeIcon icon={faUpload} /> Upload product</li></Link>
-                <Link to="/dashboard/customers"><li><FontAwesomeIcon icon={faAddressCard} /> Customers</li></Link>
+                <Link to="/dashboard/editproduct"><li><FontAwesomeIcon icon={faAddressCard} /> Edit product</li></Link>
             </ul>
         </div>
     );
