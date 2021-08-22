@@ -17,6 +17,7 @@ import SignupComplete from './components/Login/SignupComplete/SignupComplete';
 import { auth } from "./components/Login/firebase.config";
 import { useDispatch } from "react-redux";
 import ForgetPassword from './components/Login/ForgetPassword/ForgetPassword';
+import About from "./components/About/About";
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
           <Route path="/product/:productid" component={ProductDetail} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/complete" component={SignupComplete} />
+          <Route path="/about" component={About} />
           <Route path="/forget" component={ForgetPassword} />
           <Route path="*" component={NotFound} />
         </Switch>
