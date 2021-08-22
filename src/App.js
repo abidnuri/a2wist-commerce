@@ -20,6 +20,7 @@ import ForgetPassword from './components/Login/ForgetPassword/ForgetPassword';
 import { currentUser } from "./components/functions/firebaseAuth";
 import UserHistory from "./components/pages/user/UserHistory";
 import UserRoute from './components/Routes/UserRoute';
+import AdminRoute from './components/Routes/AdminRoute';
 
 
 
@@ -65,9 +66,9 @@ function App() {
           <Route path="/review" component={Review} />
           <Route path="/products" component={ShopPage} />
           <Route path="/product/:productid" component={ProductDetail} />
-          <Route path="/dashboard" component={Dashboard} />
           <Route path="/complete" component={SignupComplete} />
           <Route path="/forget" component={ForgetPassword} />
+          <AdminRoute path="/dashboard" component={Dashboard} />
           <UserRoute path="/user/history" component={UserHistory} />
           <Route path="*" component={NotFound} />
         </Switch>

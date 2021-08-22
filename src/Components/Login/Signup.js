@@ -26,7 +26,6 @@ const Signup = () => {
 
   const { user } = useSelector((state) => ({ ...state }));
 
-  
   useEffect(() => {
     if (user) history.push("/");
   }, [user]);
