@@ -10,7 +10,7 @@ const SingleFeaturedProduct = ({feature}) => {
 
     return (
         <>
-        <div data-aos="zoom-in-left" className={`col-span-1 row-span-${feature.rows} bg-gray-300 shadow-md rounded-xl`}>
+        <div data-aos="zoom-in-left" className={`col-span-1 row-span-${feature.rows} bg-gray-100 shadow-md rounded-xl`}>
             <div className="max-w-md mx-auto overflow-hidden md:max-w-2xl">
                 <div className={`${feature.flex} grid justify-items-center`}>
                     <div className="md:flex-shrink-0">
