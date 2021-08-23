@@ -8,7 +8,8 @@ import { Link, useHistory } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [searchIcon, setSearchIcon] = useState(false)
+  const [navbar, setNavbar] = useState(false);
+  const [searchIcon, setSearchIcon] = useState(false);
   let dispatch = useDispatch();
   let history = useHistory();
 
@@ -23,13 +24,20 @@ const Navbar = () => {
     history.push("/signup");
   };
 
-  const handleSearch = () => {
-    
-  }
+  const handleSearch = () => {};
+
+  const changeBackground = () => {
+    if (window.scrollY >= 80) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+  window.addEventListener("scroll", changeBackground);
 
   return (
     <div className="navbar_container">
-      <nav>
+      <nav className={navbar ? "navbar active" : "navbar"}>
         <div className="logo-container">
           <Link to="/">eSwap</Link>
         </div>
@@ -37,62 +45,105 @@ const Navbar = () => {
         <label htmlFor="click" className="menu-btn">
           <i className="fas fa-bars"></i>
         </label>
-        {
-          !searchIcon ? <ul>
-          <li>
-            <Link to="/">home </Link>
-            {/*JSON.stringify(user)*/}
-          </li>
-          <li>
-            <Link to="/orders">orders</Link>
-          </li>
-          <li>
-            <Link to="/products">products</Link>
-          </li>
-          <li>
-            <Link to="/discount">discount</Link>
-          </li>
-          <li>
-            <Link to="/review">review</Link>
-          </li>
-          <li className="dropdown inline-block relative">
-            <Link className="" to="/category">
-            Category
-            </Link>
-
-            <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
-      <li class=""><Link class="rounded-t bg-gray-200  py-2 px-6 block whitespace-no-wrap" to="/">T-Shirt</Link></li>
-      <li class=""><Link class="bg-gray-200  py-2 px-6 block whitespace-no-wrap" to="/">Pant</Link></li>
-      <li class=""><Link class="rounded-b bg-gray-200  py-2 px-6 block whitespace-no-wrap" to="/">Others</Link></li>
-    </ul>
-
-
-          </li>
-          <li>
-            <Link to="/contact">contact</Link>
-          </li>
-          {!user &&
+        {!searchIcon ? (
+          <ul>
             <li>
-              <Link to="/signup">Account</Link>
+              <Link to="/">home </Link>
+              {/*JSON.stringify(user)*/}
             </li>
-          }
-          {user &&
             <li>
-              <Link className="text-red-800 bg-gray-50">{user.email && user.email.split('@')[0]}</Link>
+              <Link to="/orders">orders</Link>
             </li>
-          }
-          {user &&
             <li>
-              <Link onClick={logout}>Logout</Link>
+              <Link to="/products">products</Link>
             </li>
-          }
-          <span onClick={()=> setSearchIcon(true)}>
-            <FontAwesomeIcon icon={faSearch} className="text-lg text-white cursor-pointer mx-1.5" />
+            <li>
+              <Link to="/discount">discount</Link>
+            </li>
+            <li>
+              <Link to="/review">review</Link>
+            </li>
+            <li className="dropdown inline-block relative">
+              <Link className="" to="/category">
+                Category
+              </Link>
+
+              <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+                <li class="">
+                  <Link
+                    class="rounded-t bg-gray-200  py-2 px-6 block whitespace-no-wrap"
+                    to="/"
+                  >
+                    T-Shirt
+                  </Link>
+                </li>
+                <li class="">
+                  <Link
+                    class="bg-gray-200  py-2 px-6 block whitespace-no-wrap"
+                    to="/"
+                  >
+                    Pant
+                  </Link>
+                </li>
+                <li class="">
+                  <Link
+                    class="rounded-b bg-gray-200  py-2 px-6 block whitespace-no-wrap"
+                    to="/"
+                  >
+                    Others
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <Link to="/contact">contact</Link>
+            </li>
+            {!user && (
+              <li>
+                <Link to="/signup">Account</Link>
+              </li>
+            )}
+            {user && (
+              <li>
+                <Link className="text-red-800 bg-gray-50">
+                  {user.email && user.email.split("@")[0]}
+                </Link>
+              </li>
+            )}
+            {user && (
+              <li>
+                <Link onClick={logout}>Logout</Link>
+              </li>
+            )}
+            <span onClick={() => setSearchIcon(true)}>
+              <FontAwesomeIcon
+                icon={faSearch}
+                className="text-lg text-white cursor-pointer mx-1.5"
+              />
+            </span>
+          </ul>
+        ) : (
+          <span>
+            <FontAwesomeIcon
+              onClick={() => setSearchIcon(false)}
+              className="text-red-700 mx-2 cursor-pointer"
+              icon={faTimesCircle}
+            />
+            <input
+              type="search"
+              name="search"
+              id="search"
+              placeholder="Search for products"
+              className="p-1.5 bg-gray-400 placeholder-white px-3 rounded-lg"
+            />
+            <button
+              onClick={handleSearch}
+              className="bg-gray-400 p-1.5 px-3 mx-1 rounded-lg text-white hover:bg-gray-300 hover:text-black font-semibold"
+            >
+              Search
+            </button>
           </span>
-        </ul> : <span><FontAwesomeIcon onClick={()=> setSearchIcon(false)} className="text-red-700 mx-2 cursor-pointer" icon={faTimesCircle} /><input type="search" name="search" id="search" placeholder="Search for products" className="p-1.5 bg-gray-400 placeholder-white px-3 rounded-lg" />
-        <button onClick={handleSearch} className="bg-gray-400 p-1.5 px-3 mx-1 rounded-lg text-white hover:bg-gray-300 hover:text-black font-semibold">Search</button>
-        </span>
-        }
+        )}
       </nav>
     </div>
   );

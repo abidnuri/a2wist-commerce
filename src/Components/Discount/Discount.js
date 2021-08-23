@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import "./Discount.css";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Discount = () => {
   const [timerDays, setTimerDays] = useState("00");
   const [timerHours, setTimerHours] = useState("00");
@@ -18,7 +18,7 @@ const Discount = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countdownDate = new Date("August 17, 2021 00:00:00").getTime();
+    const countdownDate = new Date("October 17, 2021 00:00:00").getTime();
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countdownDate - now;
@@ -64,11 +64,10 @@ const Discount = () => {
             <span>{timerSeconds}</span> Seconds
           </div>
         </div>
-        <h2 data-aos="slide-right">20% OFF FOR ALL T-SHIRT COLLECTION</h2>
-        <p data-aos="slide-right">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
-          quisquam, odit assumenda sit modi commodi esse necessitatibus
-          temporibus aperiam veritatis eveniet!
+        <h2>20% OFF FOR ALL T-SHIRT COLLECTION</h2>
+        <p>
+          Grab our discount of male t-shirt. This discount will available for
+          only the mentioned time.
         </p>
         <button data-aos="slide-right">view more</button>
       </div>
