@@ -11,7 +11,7 @@ import { auth, googleAuthProvider } from "./firebase.config";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
-
+import {createOrUpdateUser} from '../functions/firebaseAuth'
 
 const Signup = () => {
   const [option, setOption] = useState("register");
@@ -25,10 +25,12 @@ const Signup = () => {
   const history = useHistory();
 
   const { user } = useSelector((state) => ({ ...state }));
+
   useEffect(() => {
     if (user) history.push("/");
   }, [user]);
   // require('dotenv').config()
+
   //signup function
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,6 +47,15 @@ const Signup = () => {
     setEmail('');
   }
 
+  //redirect function
+  const roleBasedRedirect = (res) => {
+    if (res.data.role === "admin") {
+      history.push("/dashboard");
+    } else {
+      history.push("/user/history");
+    }
+  };
+  
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -55,14 +66,25 @@ const Signup = () => {
       const { user } = result;
       const idTokenResult = await user.getIdTokenResult();
 
-      dispatch({
-        type: "LOGGED_IN_USER",
-        payload: {
-          email: user.email,
-          token: idTokenResult.token,
-        },
-      });
-      history.push("/");
+      createOrUpdateUser(idTokenResult.token).then(
+        res => {
+          // console.log('create or update response', res);
+          dispatch({
+            type: "LOGGED_IN_USER",
+            payload: {
+              name: res.data.name,
+              email: res.data.email,
+              token: idTokenResult.token,
+              role: res.data.role,
+              _id: res.data._id,
+            },
+          });
+          roleBasedRedirect(res);
+        }
+      ).catch((err) => console.log(err))
+    
+      // history.push("/");
+      
     } catch (error) {
       console.log(error);
       toast.error(error.message);
@@ -75,13 +97,24 @@ const Signup = () => {
       .then(async (result) => {
         const { user } = result;
         const idTokenResult = await user.getIdTokenResult();
-        dispatch({
-          type: "LOGGED_IN_USER",
-          payload: {
-            email: user.email,
-            token: idTokenResult.token,
-          },
-        });
+        
+        createOrUpdateUser(idTokenResult.token).then(
+          res => {
+            // console.log('create or update response', res);
+            dispatch({
+              type: "LOGGED_IN_USER",
+              payload: {
+                name: res.data.name,
+                email: res.data.email,
+                token: idTokenResult.token,
+                role: res.data.role,
+                _id: res.data._id,
+              },
+            });
+            roleBasedRedirect(res);
+          }
+        ).catch((err) => console.log(err))
+        
         history.push("/");
       })
       .catch((err) => {
