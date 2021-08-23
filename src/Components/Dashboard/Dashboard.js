@@ -1,7 +1,7 @@
 import { useState } from "react";
 // import { useSelector } from "react-redux";
 import AdminDashboard from "./AdminDashboard/AdminDashboard";
-import UserDashboard from "./UserDashboard";
+import UserDashboard from "./UserDashboard/UserDashboard";
 
 export default function Dashboard() {
   // implement in near future

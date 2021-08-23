@@ -1,6 +1,10 @@
+import axios from 'axios';
 import React from 'react';
 
 const AllProducts = () => {
+    const token = localStorage.getItem('token');
+    axios.get('https://eswap-ecommerce.herokuapp.com/product/myProducts', {token})
+    .then(res => console.log(res.data))
     return (
         <div>
             <table className="p-5 w-full lg:w-3/5 m-auto bg-yellow-100 table-auto border-collapse border border-green-800">

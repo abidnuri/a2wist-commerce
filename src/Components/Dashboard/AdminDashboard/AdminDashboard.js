@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import AdminLogin from '../AdminLogin/AdminLogin';
 import Sidebar from '../Sidebar/Sidebar';
 import AllProducts from './AllProducts';
 import Orders from './Orders';
@@ -15,6 +16,7 @@ const AdminDashboard = () => {
                     <Route path="/dashboard/uploadproduct" component={UploadProduct} />
                     <Route path="/dashboard/orders" component={Orders} />
                     <Route path="/dashboard/allproducts" component={AllProducts} />
+                    <Route path="/dashboard/login" component={AdminLogin} />
                     <Route path="/dashboard/allproducts" component={AllProducts} />
                 </Switch>
             </div>
