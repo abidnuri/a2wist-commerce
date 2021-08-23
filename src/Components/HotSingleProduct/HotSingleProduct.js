@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./HotSingleProduct.css";
 const HotSingleProduct = ({ product }) => {
   const { title, image, price } = product;
   return (
@@ -7,7 +7,10 @@ const HotSingleProduct = ({ product }) => {
       <img className="w-full productImg" src={image} alt={title}></img>
       <div className="px-6 py-4">
         <div className="mb-2 text-xl font-bold">{title}</div>
-        <p className="text-base text-gray-700">${price}</p>
+        <div className="card_footer">
+          <p className="text-lg text-black-700">${price}</p>
+          <button className="cart_button">add to cart</button>
+        </div>
       </div>
     </div>
   );

@@ -60,9 +60,8 @@ const Discount = () => {
         </div>
         <h2>20% OFF FOR ALL T-SHIRT COLLECTION</h2>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
-          quisquam, odit assumenda sit modi commodi esse necessitatibus
-          temporibus aperiam veritatis eveniet!
+          Grab our discount of male t-shirt. This discount will available for
+          only the mentioned time.
         </p>
         <button>view more</button>
       </div>
