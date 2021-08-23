@@ -14,7 +14,7 @@ const Navbar = () => {
   let history = useHistory();
 
   let { user } = useSelector((state) => ({ ...state }));
-
+  
   const logout = () => {
     firebase.auth().signOut();
     dispatch({
@@ -24,7 +24,7 @@ const Navbar = () => {
     history.push("/signup");
   };
 
-  const handleSearch = () => {};
+  const handleSearch = () => { };
 
   const changeBackground = () => {
     if (window.scrollY >= 80) {
@@ -52,7 +52,7 @@ const Navbar = () => {
               {/*JSON.stringify(user)*/}
             </li>
             <li>
-              <Link to="/orders">orders</Link>
+              <Link to="/user/orders">orders</Link>
             </li>
             <li>
               <Link to="/products">products</Link>
@@ -63,7 +63,7 @@ const Navbar = () => {
             <li>
               <Link to="/review">review</Link>
             </li>
-            <li className="dropdown inline-block relative">
+            <li className="relative inline-block dropdown">
               <Link className="" to="/category">
                 Category
               </Link>
@@ -95,24 +95,39 @@ const Navbar = () => {
                 </li>
               </ul>
             </li>
+            <li className="relative inline-block dropdown">
+              {user && (
+                <li>
+                  <Link className="bg-gray-500">
+                    {user.email && user.email.split("@")[0]}
+                  </Link>
+                </li>
+              )}
+
+              <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+                {user && (
+                  <li class="">
+                    <Link
+                      class="bg-gray-200  py-2 px-6 block whitespace-no-wrap"
+                      to="/user/dashboard"
+                    >
+                      User Dashboard
+                    </Link>
+                  </li>
+                )}
+                {user && (
+                  <li >
+                    <Link onClick={logout} class="bg-gray-200  py-2 px-6 block whitespace-no-wrap">Logout</Link>
+                  </li>
+                )}
+              </ul>
+            </li>
             <li>
               <Link to="/contact">contact</Link>
             </li>
             {!user && (
               <li>
                 <Link to="/signup">Account</Link>
-              </li>
-            )}
-            {user && (
-              <li>
-                <Link className="text-red-800 bg-gray-50">
-                  {user.email && user.email.split("@")[0]}
-                </Link>
-              </li>
-            )}
-            {user && (
-              <li>
-                <Link onClick={logout}>Logout</Link>
               </li>
             )}
             <span onClick={() => setSearchIcon(true)}>
@@ -126,7 +141,7 @@ const Navbar = () => {
           <span>
             <FontAwesomeIcon
               onClick={() => setSearchIcon(false)}
-              className="text-red-700 mx-2 cursor-pointer"
+              className="mx-2 text-red-700 cursor-pointer"
               icon={faTimesCircle}
             />
             <input

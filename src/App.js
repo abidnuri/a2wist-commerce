@@ -1,10 +1,8 @@
 import { React, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
 import { currentUser } from "./components/functions/firebaseAuth";
-import UserHistory from "./components/pages/user/UserHistory";
 import UserRoute from './components/Routes/UserRoute';
 import AdminRoute from './components/Routes/AdminRoute';
 import About from "./components/About/About";
@@ -70,9 +68,8 @@ function App() {
           <Route path="/complete" component={SignupComplete} />
           <Route path="/about" component={About} />
           <Route path="/forget" component={ForgetPassword} />
-          <Route path="/user" component={UserDashboard} />
+          <UserRoute path="/user" component={UserDashboard} />
           <AdminRoute path="/dashboard" component={Dashboard} />
-          <UserRoute path="/user/history" component={UserHistory} />
           <Route path="*" component={NotFound} />
         </Switch>
       </div>

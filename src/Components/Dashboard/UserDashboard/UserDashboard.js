@@ -10,11 +10,11 @@ const UserDashboard = () => {
     return (
         <div className="flex flex-wrap sm:flex-none">
             <UserSidebar />
-            <div className="p-2 lg:w-4/5 w-screen">
+            <div className="w-screen p-2 lg:w-4/5">
                 <Switch>
                     <Route exact path="/user/dashboard/" component={UserPass} />
                     <Route path="/user/orders" component={UserOrders} />
-                    <Route path="/user/purchasehistory" component={UserPurchase} />
+                    <Route path="/user/history" component={UserPurchase} />
                 </Switch>
             </div>
         </div>
