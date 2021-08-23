@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const ProductDetail = () => {
+
+    useEffect(() => {
+        AOS.init({ duration: 1500 });
+      }, []);
+
+
     const {productid} = useParams();
     console.log(productid);
     return (
         <section className="overflow-hidden text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap mx-auto lg:w-4/5">
-                    <img alt="ecommerce" className="object-cover object-center w-full h-64 rounded lg:w-1/2 lg:h-auto" src="https://images.pexels.com/photos/1667088/pexels-photo-1667088.jpeg" />
-                    <div className="w-full mt-6 lg:w-1/2 lg:pl-10 lg:py-6 lg:mt-0">
+                    <img data-aos="zoom-in-left" alt="ecommerce" className="object-cover object-center w-full h-64 rounded lg:w-1/2 lg:h-auto" src="https://images.pexels.com/photos/1667088/pexels-photo-1667088.jpeg" />
+                    <div data-aos="slide-left" className="w-full mt-6 lg:w-1/2 lg:pl-10 lg:py-6 lg:mt-0">
                         <h2 className="text-sm tracking-widest text-gray-500 title-font">BRAND NAME</h2>
                         <h1 className="mb-1 text-3xl font-medium text-gray-900 title-font">The Catcher in the Rye</h1>
                         <div className="flex mb-4">
