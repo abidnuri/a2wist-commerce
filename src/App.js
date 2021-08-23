@@ -1,23 +1,24 @@
 import { React, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
+import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Dashboard from "./components/Dashboard/Dashboard";
+import UserDashboard from "./components/Dashboard/UserDashboard/UserDashboard";
 import Home from "./components/Home/Home";
+import { auth } from "./components/Login/firebase.config";
+import ForgetPassword from './components/Login/ForgetPassword/ForgetPassword';
 import Signup from "./components/Login/Signup";
+import SignupComplete from './components/Login/SignupComplete/SignupComplete';
 import NotFound from "./components/NotFound/NotFound";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 import Review from "./components/Review/Review";
 import Footer from "./components/Shared/Footer/Footer";
 import Navbar from "./components/Shared/Navbar/Navbar";
 import ShopPage from "./components/ShopPage/ShopPage";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import SignupComplete from './components/Login/SignupComplete/SignupComplete';
-import { auth } from "./components/Login/firebase.config";
-import { useDispatch } from "react-redux";
-import ForgetPassword from './components/Login/ForgetPassword/ForgetPassword';
-import About from "./components/About/About";
 
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
           <Route path="/complete" component={SignupComplete} />
           <Route path="/about" component={About} />
           <Route path="/forget" component={ForgetPassword} />
+          <Route path="/user" component={UserDashboard} />
           <Route path="*" component={NotFound} />
         </Switch>
       </div>

@@ -1,16 +1,19 @@
-import React, { useEffect } from 'react';
-import Products from '../../fackData/fackData.json';
-import ProductCard from '../ProductCard/ProductCard';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { default as React, useEffect, useState } from 'react';
+import Products from '../../fackData/fackData.json';
+import ProductCard from '../ProductCard/ProductCard';
 const ShopPage = () => {
-
-
     useEffect(() => {
         AOS.init({ duration: 1500 });
       }, []);
-
-    
+      
+    const [products, setProducts] = useState()
+    useEffect(() => {
+        fetch('https://eswap-ecommerce.herokuapp.com/product/allProducts')
+        .then(res => res.json())
+        .then(data => setProducts(data.data))
+    }, [])
     return (
         <section className="body-font">
             <h1 data-aos="slide-down" className="m-10 text-4xl text-center font-bold">All products</h1>
@@ -18,6 +21,9 @@ const ShopPage = () => {
                 <div className="flex flex-wrap">
                     {
                         Products.map(product => <ProductCard product={product} key={product.key} />)
+                    }
+                    {
+                        products &&  products.map(product => <ProductCard product={product} key={product.key} />)
                     }
                 </div>
                 <button className="m-3 p-3 inline-block bg-gray-600 rounded-md text-white">VIEW ALL</button>

@@ -11,7 +11,7 @@ const Footer = () => {
                             <div>
                                 <a href="abid" className="text-xl font-bold text-gray-800 dark:text-white hover:text-gray-700 dark:hover:text-gray-300">eSwap</a>
                             </div>
-                            <p className="max-w-md mt-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, nisi! Id.</p>
+                            <p className="max-w-md mt-2 text-gray-500 dark:text-gray-400">Customer satisfaction is our first priority</p>
                             <div className="flex mt-4 -mx-2">
                                 <a href="abid" className="mx-2 text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400" aria-label="Linkden">
                                     <svg className="w-4 h-4 fill-current" viewBox="0 0 512 512">
@@ -47,14 +47,13 @@ const Footer = () => {
                             </div>
                             <div>
                                 <h3 className="text-gray-700 uppercase dark:text-white">Products</h3>
-                                <a href="abid" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mega cloud</a>
-                                <a href="abid" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Aperion UI</a>
-                                <a href="abid" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Meraki UI</a>
+                                <a href="abid" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">T-shirt</a>
+                                <a href="abid" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Jeans</a>
+                                <a href="abid" className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Footware</a>
                             </div>
                             <div>
                                 <h3 className="text-gray-700 uppercase dark:text-white">Contact</h3>
-                                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+880123456789</span>
-                                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">mdabidnuri@email.com</span>
+                                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">eswapcommerce@gmail.com</span>
                             </div>
                         </div>
                     </div>
