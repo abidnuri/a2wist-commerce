@@ -6,17 +6,17 @@ const Review = () => {
   const reviews =[
       {
           name: 'Karim',
-          content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, nisi! Id.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, nisi! Id.',
+          content: 'Powerful selling tools – we were especially impressed by its awesome inventory system Powerful selling tools – we were especially impressed by its awesome inventory system ',
           img: 'https://images.unsplash.com/photo-1629241292555-793d5de3bb74?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'
       },
       {
         name: 'Rahim',
-        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, nisi! Id.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, nisi! Id.',
+        content: 'Powerful selling tools – we were especially impressed by its awesome inventory system Powerful selling tools – we were especially impressed by its awesome inventory system ',
         img: 'https://images.unsplash.com/photo-1629241292555-793d5de3bb74?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'
       },
       {
         name: 'Dalim',
-        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, nisi! Id.Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, nisi! Id.',
+        content: 'Powerful selling tools – we were especially impressed by its awesome inventory system Powerful selling tools – we were especially impressed by its awesome inventory system ',
         img: 'https://images.unsplash.com/photo-1629241292555-793d5de3bb74?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'
       },
   ]
@@ -29,9 +29,9 @@ const Review = () => {
         <h1 className=" font-extrabold text-3xl">Customer Reviews ( 3397 )</h1>
       </div>
 
-      <div className="bg-gray-200 rounded p-6">
+      <div  className="bg-gray-200 rounded p-6">
         <div className="flex justify-between">
-          <div>
+          <div data-aos="slide-left">
             <p className="font-semibold text-2xl">Avarage Rating</p>
             
             <div className="flex">
@@ -61,7 +61,7 @@ const Review = () => {
             <StarIcon />
             <StarIcon /> */}
           </div>
-          <div>
+          <div data-aos="slide-right">
             <p className="text-2xl font-semibold">Did the item fit well?</p>
             <div className="py-6">
               <div class="relative pt-1">

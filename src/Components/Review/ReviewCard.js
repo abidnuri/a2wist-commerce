@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ReviewCard = ({review}) => {
-    
+
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
     return (
-        <div className="mx-auto">
+        <div data-aos="zoom-in-left" className="mx-auto">
         <div class="max-w-sm  w-full lg:max-w-full lg:flex">
               <div class="bg-indigo-100 border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                 <div class="mb-8">

@@ -3,11 +3,17 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import "./Discount.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Discount = () => {
   const [timerDays, setTimerDays] = useState("00");
   const [timerHours, setTimerHours] = useState("00");
   const [timerMinutes, setTimerMinutes] = useState("00");
   const [timerSeconds, setTimerSeconds] = useState("00");
+
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
 
   let interval = useRef();
 
@@ -44,7 +50,7 @@ const Discount = () => {
   return (
     <section className="discount">
       <div className="discount_details">
-        <div className="timer">
+        <div data-aos="slide-up" className="timer">
           <div className="days">
             <span>{timerDays} </span> Days
           </div>
@@ -58,13 +64,13 @@ const Discount = () => {
             <span>{timerSeconds}</span> Seconds
           </div>
         </div>
-        <h2>20% OFF FOR ALL T-SHIRT COLLECTION</h2>
-        <p>
+        <h2 data-aos="slide-right">20% OFF FOR ALL T-SHIRT COLLECTION</h2>
+        <p data-aos="slide-right">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
           quisquam, odit assumenda sit modi commodi esse necessitatibus
           temporibus aperiam veritatis eveniet!
         </p>
-        <button>view more</button>
+        <button data-aos="slide-right">view more</button>
       </div>
     </section>
   );

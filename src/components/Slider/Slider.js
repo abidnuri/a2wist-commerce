@@ -5,6 +5,8 @@ import slider2 from "../../img/slider2.jpg";
 import slider3 from "../../img/slider3.jpg";
 import slider4 from "../../img/slider4.jpg";
 import slider5 from "../../img/slider5.png";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const fakeData = [
   {
@@ -45,6 +47,11 @@ export default function Slider() {
   const [hover, setHover] = useState(false);
   const [className, setClassName] = useState("slider__running");
 
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
+
   const handleHover = () => {
     setClassName("slider__paused");
     setHover(true);
@@ -72,12 +79,12 @@ export default function Slider() {
     <div className="slider">
       <div className={"slider__item " + className}>
         <div className="slider__item__info">
-          <h3 className="mt-20 sm:text-xl md:text-3xl lg:text-3xl">{data.description}</h3>
-          <h1 className="sm:text-2xl md:text-5xl lg:text-8xl lg:mb-6">{data.name}</h1>
-          <h3>Check Out The Latest Deals On Clothes</h3>
+          <h3 data-aos="slide-down" className="mt-20 sm:text-xl md:text-3xl lg:text-3xl">{data.description}</h3>
+          <h1 data-aos="slide-down" className="sm:text-2xl md:text-5xl lg:text-8xl lg:mb-6">{data.name}</h1>
+          <h3 data-aos="slide-down">Check Out The Latest Deals On Clothes</h3>
           
           <div className="mt-4">
-          <button className="bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">
+          <button data-aos="slide-down" className="bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">
           Shop Now
           </button>
           </div>
