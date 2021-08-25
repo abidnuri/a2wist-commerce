@@ -84,7 +84,7 @@ export default function Slider() {
           <h3 data-aos="slide-down">Check Out The Latest Deals On Clothes</h3>
           
           <div className="mt-4">
-          <button data-aos="slide-down" className="bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded">
+          <button data-aos="slide-down" className="px-4 py-2 font-bold text-white bg-gray-500 border-b-4 border-gray-700 rounded hover:bg-gray-400 hover:border-gray-500">
           Shop Now
           </button>
           </div>
@@ -109,7 +109,7 @@ export default function Slider() {
           })}
         </div>
         <div className="slider__item__image">
-          <img className="h-full w-screen object-cover" src={data.img} alt="" />
+          <img className="object-cover w-48 md:h-full " src={data.img} alt="" />
         </div>
       </div>
     </div>
