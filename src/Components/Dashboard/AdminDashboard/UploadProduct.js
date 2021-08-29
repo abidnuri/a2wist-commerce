@@ -3,6 +3,7 @@ import { createProduct } from '../../functions/products'
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import FileUpload from '../../FileUpload/FileUpload'
 
 const initialState = {
     title: '',
@@ -19,17 +20,18 @@ const initialState = {
 }
 
 const UploadProduct = () => {
-    const [productData, setProductData] = useState(initialState);
+    const [values, setValues] = useState(initialState);
+    const [loading, setLoading] = useState(false);
     //Redux
     const { user } = useSelector((state) => ({ ...state }));
 
-    //destructure the productData
-    const { title, description, price, categories, category, subs, shipping, quantity, images, colors, color, brands, brand } = productData;
+    //destructure the values
+    const { title, description, price, categories, category, subs, shipping, quantity, images, colors, color, brands, brand } = values;
 
     const handleSubmit = e => {
         console.log(e);
         e.preventDefault();
-        createProduct(productData, user.token)
+        createProduct(values, user.token)
             .then(res => {
                 console.log(res);
                 window.alert(`"${res.data.title}" is created.`);
@@ -44,7 +46,7 @@ const UploadProduct = () => {
     }
 
     const handleChange = e => {
-        setProductData({ ...productData, [e.target.name]: e.target.value, });
+        setValues({ ...values, [e.target.name]: e.target.value, });
         console.log(e.target.name, '----', e.target.value);
     }
 
@@ -54,6 +56,9 @@ const UploadProduct = () => {
     return (
         <div className="w-full p-6 m-auto bg-gray-100 shadow-xl lg:w-2/5 rounded-3xl" style={{ backgroundColor: '#90a4ae' }}>
             <h1 className="text-2xl font-semibold text-gray-800">Upload a product</h1>
+            
+            {JSON.stringify(values.images)}
+            
             <form onSubmit={handleSubmit}>
                 <input value={title} onChange={handleChange} type="text" name="title" className="block h-8 px-5 m-auto my-5 placeholder-gray-600 rounded-lg focus:outline-none" style={customStyle} placeholder="Product title" required />
                 <input value={price} onChange={handleChange} type="number" name="price" className="block h-8 px-5 m-auto my-5 placeholder-gray-600 rounded-lg focus:outline-none" style={customStyle} placeholder="Enter regular price" required />
@@ -64,7 +69,7 @@ const UploadProduct = () => {
                     <option value="Jeans">Jeans</option>
                     <option value="Shirt">Shirt</option>
                     <option value="Shoes">Shoes</option>
-                    </select> <br />*/}                
+                    </select> <br />*/}
                 <select
                     className="w-2/5 p-2 mt-5 bg-gray-300 rounded-lg"
                     name="shipping"
@@ -87,9 +92,12 @@ const UploadProduct = () => {
                         </option>
                     ))}
                 </select>
-                <input value={images} onChange={handleChange} type="file" name="product_img" placeholder="upload product sample image" className="block w-1/2 m-auto mx-auto my-5 focus:outline-none" />
+                <FileUpload
+                    values={values}
+                    setValues={setValues}
+                    setLoading={setLoading}
+                />
                 <button className="p-2 font-semibold text-white transition duration-300 ease-in-out bg-gray-700 rounded-lg hover:bg-green-500 hover:text-white">Submit</button>
-
             </form>
         </div>
     );

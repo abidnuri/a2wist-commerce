@@ -69,7 +69,7 @@ const Discount = () => {
           Grab our discount of male t-shirt. This discount will available for
           only the mentioned time.
         </p>
-        <button data-aos="slide-right">view more</button>
+        <button>view more</button>
       </div>
     </section>
   );
