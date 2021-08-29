@@ -18,7 +18,7 @@ const Discount = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countdownDate = new Date("August 30, 2021 00:00:00").getTime();
+    const countdownDate = new Date("September 13, 2021 00:00:00").getTime();
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countdownDate - now;

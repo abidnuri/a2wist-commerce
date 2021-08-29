@@ -9,9 +9,9 @@ const Home = () => {
   return (
     <div className="-mt-20">
       <Slider />
+      <Discount />
       <FeaturedProduct />
       <HotProducts />
-      <Discount />
     </div>
   );
 };

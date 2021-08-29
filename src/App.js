@@ -9,6 +9,7 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Dashboard from "./components/Dashboard/Dashboard";
 import UserDashboard from "./components/Dashboard/UserDashboard/UserDashboard";
+import Discount from './components/Discount/Discount';
 import Home from "./components/Home/Home";
 import { auth } from "./components/Login/firebase.config";
 import ForgetPassword from './components/Login/ForgetPassword/ForgetPassword';
@@ -22,6 +23,7 @@ import Navbar from "./components/Shared/Navbar/Navbar";
 import ShopPage from "./components/ShopPage/ShopPage";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';;
+
 
 function App() {
   const dispatch = useDispatch();
@@ -64,6 +66,7 @@ function App() {
           <Route path="/contact" component={Contact} />
           <Route path="/review" component={Review} />
           <Route path="/products" component={ShopPage} />
+          <Route path="/discount" component={Discount} />
           <Route path="/product/:productid" component={ProductDetail} />
           <Route path="/complete" component={SignupComplete} />
           <Route path="/about" component={About} />
