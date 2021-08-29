@@ -26,7 +26,7 @@ const FileUpload = ({ values, setValues, setLoading }) => {
                         // console.log(uri);
                         axios
                           .post(
-                            'http://localhost:3333/cloudinary/uploadimages',
+                            'https://mysterious-plains-14650.herokuapp.com/cloudinary/uploadimages',
                             { image: uri },
                             {
                               headers: {

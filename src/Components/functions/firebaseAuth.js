@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const createOrUpdateUser = async (authtoken) => {
-  return axios.post('http://localhost:3333/fireauth/create-or-update-user',
+  return axios.post('https://mysterious-plains-14650.herokuapp.com/fireauth/create-or-update-user',
     {},
     {
       headers: {
@@ -11,7 +11,7 @@ export const createOrUpdateUser = async (authtoken) => {
 }
 
 export const currentUser = async (authtoken) => {
-  return await axios.post('http://localhost:3333/fireauth/current-user',
+  return await axios.post('https://mysterious-plains-14650.herokuapp.com/fireauth/current-user',
     {},
     {
       headers: {
@@ -22,7 +22,7 @@ export const currentUser = async (authtoken) => {
 };
 
 export const currentAdmin = async (authtoken) => {
-  return await axios.post('http://localhost:3333/fireauth/current-admin',
+  return await axios.post('https://mysterious-plains-14650.herokuapp.com/fireauth/current-admin',
     {},
     {
       headers: {
